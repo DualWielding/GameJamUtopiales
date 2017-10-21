@@ -268,6 +268,97 @@
 		}
 		]
 
+	},
+
+	"human fuel":{
+
+		"name": "Aux grands maux les grands remèdes !",
+		"text":	"Devant votre absence de décision, les ingénieurs ont pris des initiatives disons... radicales. Ils utilisent certains membres de l'équipage comme combustibles. Heureusement, ils n'utilisent pour le moment que les personnes agées et les nourrissons !",
+
+		"effects":[{
+				"gauge" : "fuel",
+				"apply" : "5"
+		},
+		{
+			"gauge" : "population",
+			"apply" : "-5"
+		}
+		],
+
+		"resolution" : [{
+				"ressource" : "scrap",
+				"apply" : "-10"
+		}
+		]
+	},
+
+	"gouzi gouzargh":{
+		"name": "Gouzi gouzAAAAAargh !",
+		"text":	"Les enfants contaminés semblent grandir plus vite que les autres, et leur croissance incroyable en fait des êtres constamment affamés, à tel point qu'ils en viennent à manger le personnel !",
+
+		"effects":[{
+				"gauge" : "population",
+				"apply" : "-10"
+		}
+		],
+
+		"resolution" : [{
+				"ressource" : "food",
+				"apply" : "-5"
+		},
+		{
+				"ressource" :"security",
+				"apply":"-5"
+		}
+		],
+
+		"consequences" : [{
+			"turn" : "1",
+			"name" : "enought"
+
+		}
+		]
+
+	},
+
+	"enought":{
+		"name": "Ca suffit maintenant !",
+		"text":	"Ce virus a fait de ces enfants des mutants d'une force incroyable ! Le personnel a bien tenté de les neutraliser en les privant de dessert, mais il s'en est suivi un caprice aux proportions dantesques ! Il faut envoyer l'armée, ou leur supprimer l'oxygène pendant un mois ou deux, histoire de calmer tout le monde.",
+
+		"effects":[{
+				"gauge" : "oxygen",
+				"apply" : "-10"
+		},
+		{
+				"gauge" : "population",
+				"apply" : "-10"
+		}
+		],
+
+		"resolution" : [{
+				"ressource" : "security",
+				"apply" : "15"
+		}
+		],
+
+		"consequences" : [{
+			"turn" : "3",
+			"name" : "grown fast"
+
+		}
+		]
+
+	},
+
+	"grown fast":{
+		"name": "Comme ils grandissent vite !",
+		"text":	"Monsieur, il semblerait que votre politique éducative stricte et accessoirement la privation d'air respirable ait eu un effet bénéfique sur les mutants qui sont revenus à la raison. Reconnaissants, ils font maintenant d'excellents travailleurs  pour le vaisseau !",
+		
+		"end" : {
+			"turn": "1",
+			"text": "Malheureusement, il semblerait que certaines lois existent concernant le travail des enfants... Nous devrons nous passer de leurs services ! .. Du moins officiellement."
+		}
+
 	}
 
 

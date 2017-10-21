@@ -31,10 +31,4 @@ func activate():
 
 func start_day(day_number):
 	if activated and _crisis.has(str(day_number)):
-		Global.ship.start_crisis(_crisis[day_number])
-
-func _on_Area2D_mouse_enter():
-	pass
-
-func _on_Area2D_mouse_exit():
-	pass # replace with function body
+		Global.ship.start_crisis(_crisis[str(day_number)])

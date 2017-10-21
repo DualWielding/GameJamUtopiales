@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://ShipPart.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Engine.gd" type="Script" id=2]
-[ext_resource path="res://Sprites/ENGINE.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/ENGINE FINI.png" type="Texture" id=3]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -88.6398, 56.4468, -79.1172, -7.49074, -62.7927, -18.3737, 120.858, -15.653, 133.101, 55.0865, 116.777, 65.9695 )
 
 [node name="Engine" instance=ExtResource( 1 )]
 
@@ -10,7 +15,29 @@ script/script = ExtResource( 2 )
 
 [node name="Sprite" parent="."]
 
-transform/scale = Vector2( 0.2, 0.2 )
+transform/scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+
+build_mode = 0
+polygon = Vector2Array( -88.6398, 56.4468, -79.1172, -7.49074, -62.7927, -18.3737, 120.858, -15.653, 133.101, 55.0865, 116.777, 65.9695 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[connection signal="mouse_enter" from="Area2D" to="." method="_on_Area2D_mouse_enter"]
+
+[connection signal="mouse_exit" from="Area2D" to="." method="_on_Area2D_mouse_exit"]
 
 

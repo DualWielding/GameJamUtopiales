@@ -2,7 +2,7 @@
 
 [ext_resource path="res://ShipPart.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Nursery.gd" type="Script" id=2]
-[ext_resource path="res://Sprites/NURSERY.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/NURSERY FINI.png" type="Texture" id=3]
 
 [node name="Nursery" instance=ExtResource( 1 )]
 
@@ -10,7 +10,18 @@ script/script = ExtResource( 2 )
 
 [node name="Sprite" parent="."]
 
-transform/scale = Vector2( 0.15, 0.15 )
+transform/scale = Vector2( 0.27, 0.27 )
 texture = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+
+build_mode = 0
+polygon = Vector2Array( -64.019, 2.82861, -54.2449, -7.75998, 76.0761, -6.13097, 87.4793, 2.82861, 93.9953, 16.6752, 107.027, 20.7478, 108.656, 39.4814, 73.6327, 39.4814, 51.641, 52.5135, -49.3579, 50.8845 )
+shape_range = Vector2( 0, 1 )
+trigger = false
+
+[connection signal="mouse_enter" from="Area2D" to="." method="_on_Area2D_mouse_enter"]
+
+[connection signal="mouse_exit" from="Area2D" to="." method="_on_Area2D_mouse_exit"]
 
 

@@ -12,6 +12,7 @@ func start():
 	next_day()
 
 func next_day():
+	ship.activate_room()
 	ship.end_day()
 	current_day += 1
 	ship.start_day(current_day)
