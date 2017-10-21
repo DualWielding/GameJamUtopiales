@@ -3,6 +3,8 @@ extends WindowDialog
 var _crisis = null setget set_crisis, get_crisis
 
 func _ready():
+	randomize()
+	set_pos(Vector2(rand_range(20, 40), rand_range(20,40)))
 	if _crisis != null:
 		init()
 
@@ -58,6 +60,10 @@ func _on_Resolve_pressed():
 
 func _on_Procrastinate_pressed():
 	hide()
+
+func pop():
+	get_node("AnimationPlayer").play("Pop")
+	show()
 
 func translate(word):
 	if word == "food":

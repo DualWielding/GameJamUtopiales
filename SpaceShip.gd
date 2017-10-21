@@ -38,7 +38,9 @@ func end_day():
 		apply_crisis_effects(crisis)
 	
 		if crisis.has("consequences") and int(crisis.consequences[0].turn) == crisis.current_turn:
-			start_crisis(Consequences.get(crisis.consequences[0].name))
+			var cons = Consequences.get(crisis.consequences[0].name)
+			cons.sector = crisis.sector
+			start_crisis(cons)
 			stop_crisis(crisis)
 
 func start_day(day_number):
@@ -57,11 +59,8 @@ func start_day(day_number):
 	
 	for part in get_tree().get_nodes_in_group("ship part"):
 		part.start_day(day_number)
-	
-	notify_current_crisis()
 
 func activate_room():
-	randomize()
 	if inactive_sectors.size() == 0 :
 		return
 	var to_activate = inactive_sectors[0]
@@ -91,6 +90,9 @@ func start_crisis(crisis):
 	var c = crisis
 	c["current_turn"] = 0
 	current_crisis.append(c)
+	
+	Global.ui.pop_crisis(crisis)
+	
 	if !c.has("appear"): return
 	for appear_effect in c.appear:
 		if appear_effect.has("gauge"):
@@ -104,9 +106,9 @@ func start_crisis(crisis):
 
 # 	Remove
 func stop_crisis(crisis):
+	current_crisis.remove(current_crisis.find(crisis))
 	if crisis.has("sector"):
 		crisis.sector.stop_crisis(crisis)
-	current_crisis.remove(current_crisis.find(crisis))
 
 func has_resources_to_resolve(crisis):
 	for resolution_requirement in crisis.resolution:
@@ -123,6 +125,13 @@ func resolve_crisis(crisis):
 	else:
 		print("Not enough resource to resolve the crisis : ", crisis.name)
 	Global.ui.update_popups()
+
+func get_sector_crisis_number(sector):
+	var number = 0
+	for crisis in current_crisis:
+		if crisis.sector == sector:
+			number += 1
+	return number
 
 # Update gauges
 

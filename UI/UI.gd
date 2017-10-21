@@ -7,9 +7,9 @@ func _ready():
 
 func pop_crisis(crisis):
 	var cp = crisis_popup_class.instance()
+	cp.add_to_group("crisis popup")
 	cp.set_crisis(crisis)
 	get_node("CrisisPopups").add_child(cp)
-	cp.show()
 
 func update_popups():
 	for popup in get_node("CrisisPopups").get_children():
