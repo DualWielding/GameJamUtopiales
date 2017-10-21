@@ -1,0 +1,29 @@
+{
+	"-1":{
+		"name": "Fuite de gaz!",
+		"text":	"flu2",
+
+		"effects":[{
+				"gauge" : "population",
+				"apply" : "10"
+		},
+	        {
+				"gauge" : "oxygen",
+				"apply" : "-5"
+		}],
+
+		"resolution" : [{
+				"ressource" : "scrap",
+				"apply" : "-5"
+		}],
+
+		"consequences" : [{
+			"turn" : 1,
+			"name" : "orage"
+
+		}]
+
+	}
+
+
+}

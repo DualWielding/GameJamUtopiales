@@ -1,0 +1,44 @@
+{
+	"-1":{
+		"name": "Passager clandestin",
+		"text":	"Capitaine, de nombreux passagers témoignent de la présence d'un mystérieux et redoutable extra-terrestre à bord du vaisseau ! Je préconise de l'attirer avec de la nourriture puis de nous en saisir !",
+
+		"resolution" : [{
+				"ressource" : "security",
+				"apply" : "-2"
+		},
+		{
+				"ressource" : "food",
+				"apply": "-3"
+		}],
+
+		"consequences" : [{
+			"turn" : "1",
+			"name" : "stowaway"
+
+		}
+		]
+
+	},
+
+	"3":{
+		"name": "Encore un passager clandestin ?!",
+		"text": "Capitaine ! D'autres rapports nous arrivent ! Ils font encore état d'une créature rôdant dans nos coursives !",
+
+		"resolution" : [{
+				"ressource" : "security",
+				"apply" : "-2"
+		},
+		{
+				"ressource" : "food",
+				"apply": "-3"
+		}],
+
+		"end":{
+			"turn": "1",
+			"text" : "Il s'est avéré que toute cette histoire n'était en fait qu'une vaste plaisanterie. Simplement des passagers ayant manifestement regardé trop d'holo-films."
+		}
+	}
+
+
+}

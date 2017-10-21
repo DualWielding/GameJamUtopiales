@@ -1,0 +1,274 @@
+{
+	"riots":{
+		"name": "Emeutes !",
+		"text":	"olala, ca craint",
+
+		"effects":[{
+				"gauge" : "population",
+				"apply" : -5
+		}
+		],
+
+		"resolution" : [{
+				"ressource" : "security",
+				"apply" : "-5"
+		}
+		],
+
+		"consequences" : [{
+			"turn" : 1,
+			"name" : "we are the law"
+
+		}
+		],
+
+		"appear" : [{
+			"gauge": {
+				"name": "population",
+				"apply": "-2"
+			}
+		}
+		]
+
+	},
+
+
+
+
+
+	"we are the law":{
+		"name": "La loi, c'est nous !",
+		"text":	"Flu.",
+
+		"effects":[{
+				"gauge" : "population",
+				"apply" : -5
+		}
+		],
+
+		"resolution" : [{
+				"ressource" : "security",
+				"apply" : -5
+		}
+		],
+
+		"consequences" : [{
+			"turn" : "1",
+			"name" : "end of the riots"
+
+		}
+		],
+
+			"ressource" :[{
+				"name": "security",
+				"apply": "5"
+			}]
+
+	},
+
+	"orage":{
+		"name": "Tiens, y'a de l'orage.",
+		"text":	"fluboum",
+
+		"effects":[{
+				"gauge" : "population",
+				"apply" :"10"
+		},
+
+		{
+				"gauge" : "oxygen",
+				"apply" : "-5"
+		}],
+
+		"resolution" : [{
+				"ressource" : "scrap",
+				"apply" : "-7"
+		}],
+
+		"consequences" : [{
+			"turn" : "3",
+			"name" :"orgy"
+
+		}],
+
+		"appear" : [{
+			"gauge": {
+				"name": "population",
+				"apply": "-30"
+			}
+		}]
+	},
+
+
+	"orgy":{
+		"name": "Tiens, y'a de l'orgie",
+		"text":	"FLUPUTAIN",
+
+		"end":[{
+				"turn" : "1",
+				"text" : "la fin"
+		}],
+
+		"appear" : [
+			{"gauge": {
+				"name": "population",
+				"apply": "60"
+			}},
+                   
+			{"gauge": {
+				"name": "oxygen",
+				"apply": "-20"
+			}}
+		]
+
+	},
+
+	"stowaway":{
+		"name": "Le 8eme passager",
+		"text":	"Monsieur, bonne nouvelle : nous sommes positifs quant à la nature de la menace. Il s'agit bel et bien d'un redoutable alien. Du moins c'est ce qu'ont affirmé les survivants de l'équipe de recherche. La mauvaise nouvelle, c'est qu'elle se nourrit de nos passagers et de notre carburant.",
+
+		"effects":[{
+				"gauge" : "population",
+				"apply" : "-2"
+		},
+		{
+				"gauge": "fuel",
+				"apply": "-2"
+		}],
+
+		"resolution" : [{
+				"ressource" : "security",
+				"apply" : "-3"
+		}
+		],
+
+		"consequences" : [{
+			"turn" : "3",
+			"name" : "alien babies"
+
+		}],
+
+		"appear" : [
+			{"ressource": 
+				{
+				"name": "security",
+				"apply": "-3"
+				}
+			}
+		]
+
+	},
+
+	"alien babies": {
+		"name":"L'arche de Noé",
+		"text": "Capitaine, vous vous souvenez de la créature Alien ? Eh bien disons que désormais... ce sont DES créatures aliens.",		
+		
+		"effects":[{
+				"gauge" : "population",
+				"apply" : "-10"
+		},
+		{
+				"gauge": "fuel",
+				"apply": "-10"
+		}],
+
+		"resolution" : [{
+				"ressource" : "security",
+				"apply" : "-5"
+		},
+		{
+				"ressource": "scrap",
+				"apply" : "-5"
+		}]
+	},
+
+	"natural reflexes":{
+		"name": "Réflexes naturels",
+		"text" :"Monsieur, le spectacle produit par la superNovae est si captivant que certains des membres les plus fragiles de notre équipage ont commencé à fonder une secte voyant dans ce genre de phénomène la manifestation de quelque dieu ! Par la Sainte Novae Tout Puissante, que devons nous faire ?!",
+		
+		"effects":[{
+				"gauge" : "fuel",
+				"apply" : "15"
+		}],
+
+		"resolution" : [{
+				"ressource" : "scrap",
+				"apply" : "-5"
+		},
+		{
+			"ressource": "security",
+			"apply" : "-3"
+		}],
+
+		"consequences" : [{
+			"turn" : "1",
+			"name" : "avae novae"
+
+		}]
+
+	},
+
+	"avae novae":{
+		"name": "Avae Novae",
+		"text":	"Capitaine, nous avons... Je veux dire : les membres de la secte Novae ont volé un container de nourriture pour de le 'rendre à l'espace', afin de calmer le courroux cosmique des saintes Etoiles !",
+
+		"effects":[{
+				"gauge" : "fuel",
+				"apply" : "15"
+		}],
+
+		"resolution" : [{
+				"ressource" : "scrap",
+				"apply" : "-5"
+		},
+		{
+			"ressource": "security",
+			"apply" : "-3"
+		}],
+
+		"consequences" : [{
+			"turn" : "1",
+			"name" : "novae ultima"
+		}],
+
+		"appear":[{
+			"ressource": "food",
+			"apply": "-3"
+
+		}]
+
+	},
+
+	"novae ultima":{
+		"name": "Novae Ultima",
+		"text":	"La cargaison de nourriture n'a pas suffit à apaiser les Etoiles ! Nous avons... je veux dire : ILS ont donc dû 'rendre à l'espace' une partie des passagers et les quelques gardes qui ont tenté de nous... je veux dire : de LES arrêter !",
+
+		"effects":[{
+				"gauge" : "fuel",
+				"apply" : "15"
+		}],
+
+		"resolution" : [{
+				"ressource" : "scrap",
+				"apply" : "-5"
+		},
+		{
+			"ressource": "security",
+			"apply" : "-3"
+		}],
+
+		"appear":[{
+			"gauge": "population",
+			"apply": "-10"
+
+		},
+		{
+			"ressource": "security",
+			"appply" : "-2"
+		}
+		]
+
+	}
+
+
+}

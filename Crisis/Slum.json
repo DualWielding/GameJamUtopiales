@@ -1,0 +1,28 @@
+{
+	"-1":{
+		"name": "famine!",
+		"text":	"Flu.",
+
+		"effects":[{
+				"gauge" : "population",
+				"apply" : "-10"
+		}
+		],
+
+		"resolution" : [{
+				"ressource" : "food",
+				"apply" : "-5"
+		}
+		],
+
+		"consequences" : [{
+			"turn" : "3",
+			"name" : "riots"
+
+		}
+		]
+
+	}
+
+
+}

@@ -1,0 +1,112 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://UI/CrisisPopup.gd" type="Script" id=1]
+
+[node name="CrisisPopup" type="WindowDialog"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 222.0
+margin/top = 86.0
+margin/right = 798.0
+margin/bottom = 511.0
+popup/exclusive = false
+window/title = "Please, name me !"
+script/script = ExtResource( 1 )
+
+[node name="Text" type="RichTextLabel" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 109.0
+margin/right = 576.0
+margin/bottom = 261.0
+bbcode/enabled = true
+bbcode/bbcode = ""
+visible_characters = -1
+percent_visible = 1.0
+
+[node name="Picture" type="TextureFrame" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 2.0
+margin/top = 2.0
+margin/right = 572.0
+margin/bottom = 186.0
+stretch_mode = 0
+
+[node name="Resolve" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 4.0
+margin/top = 395.0
+margin/right = 84.0
+margin/bottom = 415.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Résoudre la crise"
+flat = false
+
+[node name="Procrastinate" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 381.0
+margin/top = 395.0
+margin/right = 568.0
+margin/bottom = 415.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Nous verrons cela plus tard"
+flat = false
+
+[node name="Effects" type="RichTextLabel" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 5.0
+margin/top = 246.0
+margin/right = 573.0
+margin/bottom = 326.0
+bbcode/enabled = true
+bbcode/bbcode = ""
+visible_characters = -1
+percent_visible = 1.0
+
+[node name="ResolutionCosts" type="RichTextLabel" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -1.0
+margin/top = 339.0
+margin/right = 575.0
+margin/bottom = 379.0
+bbcode/enabled = true
+bbcode/bbcode = ""
+visible_characters = -1
+percent_visible = 1.0
+
+[connection signal="pressed" from="Resolve" to="." method="_on_Resolve_pressed"]
+
+[connection signal="pressed" from="Procrastinate" to="." method="_on_Procrastinate_pressed"]
+
+
