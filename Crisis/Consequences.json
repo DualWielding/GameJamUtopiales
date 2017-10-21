@@ -1,7 +1,7 @@
 {
 	"riots":{
 		"name": "Emeutes !",
-		"text":	"Capitaine, la situation commence à devenir intenable dans les niveaux inférieurs. La population se tourne vers le canibalisme, et des émeutes éclatent un peu partout.",
+		"text":	"Capitaine, la situation commence à devenir intenable dans les niveaux inférieurs. La population se tourne vers le canibalisme, et des émeutes éclatent un peu partout. J'en conçois, c'est amusant à voir, mais la cargaison risque d'être endommagée.",
 
 		"effects":[{
 				"gauge" : "population",
@@ -11,7 +11,7 @@
 
 		"resolution" : [{
 				"ressource" : "security",
-				"apply" : "-5"
+				"apply" : "-7"
 		}
 		],
 
@@ -145,14 +145,12 @@
 
 		}],
 
-		"appear" : [
-			{"ressource": 
-				{
+		"appear" : [{
+			"ressource": {
 				"name": "security",
 				"apply": "-3"
 				}
-			}
-		]
+		}]
 
 	},
 
@@ -229,8 +227,10 @@
 		}],
 
 		"appear":[{
-			"ressource": "food",
-			"apply": "-3"
+			"ressource": {
+				"name": "food",
+				"apply": "-3"
+			}
 
 		}]
 
@@ -255,14 +255,17 @@
 		}],
 
 		"appear":[{
-			"gauge": "population",
-			"apply": "-10"
+			"gauge":{
+				"name":"population",
+				"apply": "-10"
+			}
 
 		},
 		{
-			"ressource": "security",
-			"appply" : "-2"
-		}
+			"gauge":{
+				"name": "security",
+				"appply" : "-2"
+		}}
 		]
 
 	},

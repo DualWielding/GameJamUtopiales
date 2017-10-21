@@ -43,9 +43,9 @@ func end_day():
 
 func start_day(day_number):
 	# Start day gain
-	update_security(1)
-	update_food(1)
-	update_scrap(1)
+	update_security(2)
+	update_food(2)
+	update_scrap(2)
 	
 	for sector in sectors_to_activate:
 		get_node(sector).activate()
