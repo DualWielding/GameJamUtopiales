@@ -52,7 +52,7 @@ func start_day(day_number):
 		sectors_to_activate.remove(sectors_to_activate.find(sector))
 	
 	for crisis in current_crisis:
-		if crisis.has("end") and crisis.end.turn == crisis.current_turn:
+		if crisis.has("end") and int(crisis.end.turn) == crisis.current_turn:
 			stop_crisis(crisis)
 	
 	for part in get_tree().get_nodes_in_group("ship part"):
@@ -179,5 +179,5 @@ func update_food(value):
 func signal_resource(name, current_value, max_value):
 	emit_signal("update_resource", name, current_value, max_value)
 
-func end_game():
+func end_game(crisis):
 	get_tree().quit()

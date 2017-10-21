@@ -1,8 +1,23 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://ShipPart.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Market.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/MARKET.png" type="Texture" id=3]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -22.4328, -3.80301, 99.5672, -4.80301, 104.567, 5.19699, 94.5672, 49.197, -53.4328, 44.197, -37.4328, 16.197 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -37.4328, 16.197, -40.4328, 9.19699, -22.4328, -3.80301 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -37.4328, 16.197, -53.4328, 44.197, -57.4328, 28.197, -52.4328, 18.197 )
 
 [node name="Market" instance=ExtResource( 1 )]
 
@@ -12,5 +27,33 @@ script/script = ExtResource( 2 )
 
 transform/scale = Vector2( 0.175, 0.175 )
 texture = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 2 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 3 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/2/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+
+build_mode = 0
+polygon = Vector2Array( -53.4328, 44.197, -57.4328, 28.197, -52.4328, 18.197, -37.4328, 16.197, -40.4328, 9.19699, -22.4328, -3.80301, 99.5672, -4.80301, 104.567, 5.19699, 94.5672, 49.197 )
+shape_range = Vector2( 0, 2 )
+trigger = false
+
+[connection signal="mouse_enter" from="Area2D" to="." method="_on_Area2D_mouse_enter"]
+
+[connection signal="mouse_exit" from="Area2D" to="." method="_on_Area2D_mouse_exit"]
 
 

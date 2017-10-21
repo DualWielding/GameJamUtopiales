@@ -1,8 +1,23 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://ShipPart.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Nursery.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/NURSERY FINI.png" type="Texture" id=3]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 109.471, 19.1187, 108.656, 40.2959, 79.3342, 38.6669, 91.5518, 17.4897 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 79.3342, 38.6669, 53.27, 52.5135, -49.3579, 51.699, -64.8335, -0.429413, -52.6159, -5.31645, 77.7052, -4.50195, 79.3342, 1.1996 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 91.5518, 17.4897, 79.3342, 38.6669, 79.3342, 1.1996, 86.6648, 3.64312 )
 
 [node name="Nursery" instance=ExtResource( 1 )]
 
@@ -13,11 +28,28 @@ script/script = ExtResource( 2 )
 transform/scale = Vector2( 0.27, 0.27 )
 texture = ExtResource( 3 )
 
+[node name="Area2D" type="Area2D" parent="."]
+
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 2 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 3 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/2/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 
 build_mode = 0
-polygon = Vector2Array( -64.019, 2.82861, -54.2449, -7.75998, 76.0761, -6.13097, 87.4793, 2.82861, 93.9953, 16.6752, 107.027, 20.7478, 108.656, 39.4814, 73.6327, 39.4814, 51.641, 52.5135, -49.3579, 50.8845 )
-shape_range = Vector2( 0, 1 )
+polygon = Vector2Array( -64.8335, -0.429413, -52.6159, -5.31645, 77.7052, -4.50195, 79.3342, 1.1996, 86.6648, 3.64312, 91.5518, 17.4897, 109.471, 19.1187, 108.656, 40.2959, 79.3342, 38.6669, 53.27, 52.5135, -49.3579, 51.699 )
+shape_range = Vector2( 0, 2 )
 trigger = false
 
 [connection signal="mouse_enter" from="Area2D" to="." method="_on_Area2D_mouse_enter"]

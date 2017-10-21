@@ -31,6 +31,9 @@ func init():
 			cost_text = str(cost_text, "    ", cost.apply, " ", translate(cost.ressource), "\n")
 	get_node("ResolutionCosts").set_bbcode(cost_text)
 	
+	if _crisis.has("is_consequence") and _crisis.is_consequence:
+		get_node("Procrastinate").set_text(["J'ai dit : PLUS TARD", "Mh mh...", "Je suis déjà assez occupé"][randi()%3])
+	
 	update()
 
 func update_ui():

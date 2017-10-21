@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://ShipPart.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/CircularLightShape.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=5]
 
@@ -25,6 +26,7 @@ script/script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 
+visibility/light_mask = 5
 transform/pos = Vector2( 21.435, 21.435 )
 transform/scale = Vector2( 0.275, 0.275 )
 
@@ -39,12 +41,27 @@ playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Light2D" type="Light2D" parent="."]
 
-input/pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+visibility/visible = false
+enabled = true
+editor_only = false
+texture = ExtResource( 2 )
+offset = Vector2( 0, 0 )
+scale = 1.0
+color = Color( 0.972656, 0, 0, 1 )
+energy = 1.0
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 4
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
 
 

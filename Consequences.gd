@@ -13,4 +13,6 @@ func _ready():
 		print("Crisis/Consequences.json does not exist !")
 
 func get(name):
-	return consequences[name]
+	var cons = consequences[name]
+	cons.is_consequence = true
+	return cons

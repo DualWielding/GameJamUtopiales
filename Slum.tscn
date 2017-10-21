@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://ShipPart.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Slum.gd" type="Script" id=2]
@@ -7,7 +7,12 @@
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -359.713, -12.0502, -344.744, -30.6111, 379.129, -34.2035, 395.893, -20.4325, 404.874, 2.91821, 388.11, 65.7856, 361.167, 80.1553, -276.488, 83.149, -347.139, 63.9894 )
+points = Vector2Array( -338.757, 68.7793, -342.948, 63.9894, -361.509, -13.2477, -344.744, -28.2161, -276.488, -35.9997, -321.394, 69.9767 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 358.772, 80.754, -277.686, 84.9452, -321.394, 69.9767, -276.488, -35.9997, 379.727, -33.6047, 395.893, -16.8401, 403.677, 2.91821, 387.511, 68.1805 )
 
 [node name="Slum" instance=ExtResource( 1 )]
 
@@ -23,6 +28,9 @@ input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
+shapes/1/shape = SubResource( 2 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
@@ -31,8 +39,8 @@ angular_damp = 1.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 
 build_mode = 0
-polygon = Vector2Array( -359.713, -12.0502, -344.744, -30.6111, 379.129, -34.2035, 395.893, -20.4325, 404.874, 2.91821, 388.11, 65.7856, 361.167, 80.1553, -276.488, 83.149, -347.139, 63.9894 )
-shape_range = Vector2( 0, 0 )
+polygon = Vector2Array( -342.948, 63.9894, -361.509, -13.2477, -344.744, -28.2161, -276.488, -35.9997, 379.727, -33.6047, 395.893, -16.8401, 403.677, 2.91821, 387.511, 68.1805, 358.772, 80.754, -277.686, 84.9452, -321.394, 69.9767, -338.757, 68.7793 )
+shape_range = Vector2( 0, 1 )
 trigger = false
 
 [connection signal="mouse_enter" from="Area2D" to="." method="_on_Area2D_mouse_enter"]
