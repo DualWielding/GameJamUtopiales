@@ -101,10 +101,10 @@
 		"name": "Tiens, y'a de l'orgie",
 		"text":	"Hum... Capitaine, la fuite de gaz n'étant toujours pas réparée... il est monté à la tête des habitants des niveaux inférieurs qui... enfin... disons que la natalité va augmenter en conséquence prochainement. Les images jointes ont été naturellement censurées.",
 
-		"end":[{
+		"end":{
 				"turn" : "1",
 				"text" : "Le calme semble enfin être revenu dans les niveaux supérieurs. Nos senseurs indiquent une augmentation de 865% du taux de natalité."
-		}],
+		},
 
 		"appear" : [
 			{"gauge": {
