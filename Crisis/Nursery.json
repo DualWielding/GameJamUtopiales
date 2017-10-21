@@ -1,0 +1,22 @@
+{
+	"-1":{
+		"name": "Oh, quel amour de bébé !",
+		"text":	"Capitaine ! Notre personnel hospitalier est inquiet : un virus encore inconnu et incurable contamine les enfants. Le personnel réclame du matériel de pointe pour l'étudier.  Cela dit, il semble bénin. Aucune raison de s'inquiéter... hein ?",
+
+		"resolution" : [{
+				"ressource" : "scrap",
+				"apply" : "-7"
+		}
+		],
+
+		"consequences" : [{
+			"turn" : "1",
+			"name" : "gouzi gouzargh"
+
+		}
+		]
+
+	}
+
+
+}

@@ -1,0 +1,32 @@
+{
+	"-1":{
+		"name": "Surchauffe",
+		"text":	"Capitaine, nos ingénieurs nous informent que les réacteurs sont défaillants et consomment bien plus de fuel qu'ils ne le devraient ! Ils préconisent d'utiliser nos surplus de nourriture afin d'économiser le carburant en attendant de pouvoir les réparer.",
+
+		"effects":[{
+				"gauge" : "fuel",
+				"apply" : "5"
+		},
+		{
+			"ressource" : "food",
+			"apply" : "-2"
+		}
+		],
+
+		"resolution" : [{
+				"ressource" : "scrap",
+				"apply" : "-10"
+		}
+		],
+
+		"consequences" : [{
+			"turn" : "3",
+			"name" : "human fuel"
+
+		}
+		]
+
+	}
+
+
+}

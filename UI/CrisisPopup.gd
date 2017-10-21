@@ -13,17 +13,22 @@ func init():
 	
 	var effect_text = "Sans effet"
 	if _crisis.has("effects"):
-		effect_text = "[b]Effets[/b] :\n    "
+		effect_text = "[b]Effets[/b] :\n"
 		for effect in _crisis.effects:
-			effect_text = str(effect_text, effect.apply, " ", translate(effect.gauge), " / tour\n")
+			var thing_to_decrease
+			if effect.has("gauge"):
+				thing_to_decrease = effect.gauge
+			else:
+				thing_to_decrease = effect.ressource
+			effect_text = str(effect_text, "    ", effect.apply, " ", translate(thing_to_decrease), " / tour\n")
 	
 	get_node("Effects").set_bbcode(effect_text)
 	
 	var cost_text = "Aucun coût"
 	if _crisis.has("resolution"):
-		cost_text = "[b]Coûts de résolution[/b] :\n    "
+		cost_text = "[b]Coûts de résolution[/b] :\n"
 		for cost in _crisis.resolution:
-			cost_text = str(cost_text, cost.apply, " ", translate(cost.ressource), " / tour\n")
+			cost_text = str(cost_text, "    ", cost.apply, " ", translate(cost.ressource), "\n")
 	get_node("ResolutionCosts").set_bbcode(cost_text)
 	
 	update()

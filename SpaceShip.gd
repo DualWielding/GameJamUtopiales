@@ -17,14 +17,15 @@ var scrap = 0
 var current_crisis = []
 
 var sectors_to_activate = ["Slum"]
+var inactive_sectors = ["Nursery", "Estate", "Market", "CommandDeck", "Docks", "Engine"] 
 
 signal update_gauge(name, current_value, max_value)
 signal update_resource(name, current_value, max_value)
 
 func _ready():
-	update_food(15)
-	update_security(15)
-	update_scrap(15)
+	update_food(5)
+	update_security(5)
+	update_scrap(5)
 	update_population(50)
 	update_fuel(50)
 	update_oxygen(50)
@@ -42,9 +43,9 @@ func end_day():
 
 func start_day(day_number):
 	# Start day gain
-	update_security(2)
-	update_food(2)
-	update_scrap(2)
+	update_security(1)
+	update_food(1)
+	update_scrap(1)
 	
 	for sector in sectors_to_activate:
 		get_node(sector).activate()
@@ -59,6 +60,14 @@ func start_day(day_number):
 	
 	notify_current_crisis()
 
+func activate_room():
+	randomize()
+	if inactive_sectors.size() == 0 :
+		return
+	var to_activate = inactive_sectors[0]
+	sectors_to_activate.append(to_activate)
+	inactive_sectors.remove(0)
+
 # Crisis related
 
 func notify_current_crisis():
@@ -66,10 +75,14 @@ func notify_current_crisis():
 		Global.ui.pop_crisis(c)
 
 func apply_crisis_effects(crisis):
-	for effect in crisis.effects:
-		update_gauge(effect.gauge, effect.apply)
-		if get(effect.gauge) <= 0:
-			end_game(crisis)
+	if crisis.has("effects"):
+		for effect in crisis.effects:
+			if effect.has("gauge"):
+				update_gauge(effect.gauge, int(effect.apply))
+				if get(effect.gauge) <= 0:
+					end_game(crisis)
+			elif effect.has("ressource"):
+				update_resource(effect.ressource, int(effect.apply))
 	crisis.current_turn += 1
 
 #	 Add
@@ -81,11 +94,11 @@ func start_crisis(crisis):
 	if !c.has("appear"): return
 	for appear_effect in c.appear:
 		if appear_effect.has("gauge"):
-			update_gauge(appear_effect.gauge.name, appear_effect.gauge.apply)
+			update_gauge(appear_effect.gauge.name, int(appear_effect.gauge.apply))
 			if get(appear_effect.gauge.name) <= 0:
 				end_game(c)
 		if appear_effect.has("resource"):
-			update_resource(appear_effect.resource.name, appear_effect.resource.apply)
+			update_resource(appear_effect.resource.name, int(appear_effect.resource.apply))
 		if appear_effect.has("sector"):
 			sectors_to_activate.append(appear_effect.sector)
 
@@ -147,14 +160,20 @@ func update_resource(name, value):
 
 func update_security(value):
 	security += value
+	if security < 0:
+		security = 0
 	signal_resource("security", security, max_security)
 
 func update_scrap(value):
 	scrap += value
+	if scrap < 0:
+		scrap = 0
 	signal_resource("scrap", scrap, max_scrap)
 
 func update_food(value):
 	food += value
+	if food < 0:
+		food = 0
 	signal_resource("food", food, max_food)
 
 func signal_resource(name, current_value, max_value):

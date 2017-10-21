@@ -20,8 +20,10 @@
 		}],
 
 		"appear" : [{
-			"gauge" : "fuel",
-			"apply" : "30"
+			"gauge" : {
+				"name": "fuel",
+				"apply" : "30"
+			}
 		}]
 
 	}
