@@ -36,6 +36,11 @@
 	"we are the law":{
 		"name": "La loi, c'est nous !",
 		"text":	"C'est merveilleux ! Le chaos ambiant des niveaux inférieurs a inquiété le reste des passagers : le service d'ordre du vaisseau croule sous les candidatures !",
+		"end" : {
+			"turn" : "1",
+			"text" : "end of the riots"
+
+		},
 
 		"effects":[{
 				"gauge" : "population",
@@ -49,12 +54,7 @@
 		}
 		],
 
-		"consequences" : [{
-			"turn" : "1",
-			"name" : "end of the riots"
 
-		}
-		],
 
 			"ressource" :[{
 				"name": "security",
