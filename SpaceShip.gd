@@ -104,6 +104,8 @@ func start_crisis(crisis):
 
 # 	Remove
 func stop_crisis(crisis):
+	if crisis.has("sector"):
+		crisis.sector.stop_crisis(crisis)
 	current_crisis.remove(current_crisis.find(crisis))
 
 func has_resources_to_resolve(crisis):

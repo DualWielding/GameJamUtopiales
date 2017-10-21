@@ -17,8 +17,6 @@ func _ready():
 		var text = file.get_as_text()
 		_crisis.parse_json(text)
 		file.close()
-	# print something from the dictionnary for testing.
-		print(get_name(), " : ", _crisis)
 	else:
 		print("Crisis/", get_name(), ".json does not exist !")
 	
@@ -39,13 +37,25 @@ func activate():
 	
 	activated = true
 	if _crisis.has("-1"):
-		Global.ship.start_crisis(_crisis["-1"])
-	else:
-		print(get_name(), " does not have a -1 crisis")
+		start_crisis(_crisis["-1"])
+
+func start_crisis(crisis):
+	get_node("Sprite").set_modulate(Color(1.0, 1.0, 1.0, 1.0))
+	crisis.sector = self
+	current_crisis.append(crisis)
+	on_crisis = true
+	get_node("Light2D").show()
+	Global.ship.start_crisis(crisis)
+	get_node("AnimationPlayer").play("Blink_light")
+
+func stop_crisis(crisis):
+	current_crisis.remove(current_crisis.find(crisis))
+	if current_crisis.size() == 0:
+		on_crisis = false
+		get_node("Light2D").hide()
+		get_node("AnimationPlayer").stop_all()
 
 func start_day(day_number):
 	if activated and _crisis.has(str(day_number)):
 		var cr = _crisis[str(day_number)]
-		cr.sector = self
-		current_crisis.append(cr)
-		Global.ship.start_crisis(cr)
+		start_crisis(cr)

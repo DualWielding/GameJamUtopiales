@@ -15,8 +15,13 @@ script/script = ExtResource( 2 )
 
 [node name="Sprite" parent="."]
 
+visibility/light_mask = 33
 transform/scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 3 )
+
+[node name="Light2D" parent="."]
+
+range/item_mask = 32
 
 [node name="Area2D" type="Area2D" parent="."]
 
