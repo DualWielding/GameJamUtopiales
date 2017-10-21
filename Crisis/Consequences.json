@@ -1,11 +1,11 @@
 {
 	"riots":{
 		"name": "Emeutes !",
-		"text":	"olala, ca craint",
+		"text":	"Capitaine, la situation commence à devenir intenable dans les niveaux inférieurs. La population se tourne vers le canibalisme, et des émeutes éclatent un peu partout.",
 
 		"effects":[{
 				"gauge" : "population",
-				"apply" : -5
+				"apply" : "-5"
 		}
 		],
 
@@ -16,7 +16,7 @@
 		],
 
 		"consequences" : [{
-			"turn" : 1,
+			"turn" : "1",
 			"name" : "we are the law"
 
 		}
@@ -33,22 +33,19 @@
 	},
 
 
-
-
-
 	"we are the law":{
 		"name": "La loi, c'est nous !",
-		"text":	"Flu.",
+		"text":	"C'est merveilleux ! Le chaos ambiant des niveaux inférieurs a inquiété le reste des passagers : le service d'ordre du vaisseau croule sous les candidatures !",
 
 		"effects":[{
 				"gauge" : "population",
-				"apply" : -5
+				"apply" : "-5"
 		}
 		],
 
 		"resolution" : [{
 				"ressource" : "security",
-				"apply" : -5
+				"apply" : "-5"
 		}
 		],
 
@@ -68,7 +65,7 @@
 
 	"orage":{
 		"name": "Tiens, y'a de l'orage.",
-		"text":	"fluboum",
+		"text":	"Capitaine, un imbécile a dû provoquer une étincelle dans le secteur ! Une série d'explosions s'est produite, tuant des milliers de passagers !",
 
 		"effects":[{
 				"gauge" : "population",
@@ -94,7 +91,7 @@
 		"appear" : [{
 			"gauge": {
 				"name": "population",
-				"apply": "-30"
+				"apply": "-20"
 			}
 		}]
 	},
@@ -102,11 +99,11 @@
 
 	"orgy":{
 		"name": "Tiens, y'a de l'orgie",
-		"text":	"FLUPUTAIN",
+		"text":	"Hum... Capitaine, la fuite de gaz n'étant toujours pas réparée... il est monté à la tête des habitants des niveaux inférieurs qui... enfin... disons que la natalité va augmenter en conséquence prochainement. Les images jointes ont été naturellement censurées.",
 
 		"end":[{
 				"turn" : "1",
-				"text" : "la fin"
+				"text" : "Le calme semble enfin être revenu dans les niveaux supérieurs. Nos senseurs indiquent une augmentation de 865% du taux de natalité."
 		}],
 
 		"appear" : [

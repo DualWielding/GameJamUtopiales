@@ -1,7 +1,7 @@
 {
 	"-1":{
 		"name": "Fuite de gaz!",
-		"text":	"flu2",
+		"text":	"Nos scanners indiquent une importante fuite de protoxyde d'azote dans ce secteur. Bien qu'innoffensif, le gaz semble avoir un effet... aphrodisiaque sur la population.",
 
 		"effects":[{
 				"gauge" : "population",

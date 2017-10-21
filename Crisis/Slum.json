@@ -1,17 +1,17 @@
 {
 	"-1":{
 		"name": "famine!",
-		"text":	"Flu.",
+		"text":	"Le manque de nourriture commence à se faire ressentir dans les secteurs inférieurs, capitaine. Nos passagers meurent de faim !",
 
 		"effects":[{
 				"gauge" : "population",
-				"apply" : "-10"
+				"apply" : "-5"
 		}
 		],
 
 		"resolution" : [{
 				"ressource" : "food",
-				"apply" : "-5"
+				"apply" : "-10"
 		}
 		],
 
