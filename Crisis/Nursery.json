@@ -10,7 +10,11 @@
 		],
 
 		"onResolve" : {
-			"text": "Nos scientifiques vous remercient chaleureusement pour les appareils de pointe !\n Grace à eux, ils sont en mesure de vous affirmer qu'il s'agit en réalité...\n D'une forme de varicelle. Je vous l'avais dit, qu'il n'y avait rien à craindre.",
+			"text": "Nos scientifiques vous remercient chaleureusement pour les appareils de pointe !\nGrace à eux, ils sont en mesure de vous affirmer qu'il s'agit en réalité...\nD'une forme de varicelle. Je vous l'avais dit, qu'il n'y avait rien à craindre.\nEn revanche, les expériences ont consommé nos réserves de gaz. Oui,\nnos scientifiques ne sont pas très doués.",
+			"gauge": [{
+				"name" : "oxygen",
+				"apply" : "-15"
+			}]
 		},
 
 		"consequences" : [{

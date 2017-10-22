@@ -1,13 +1,19 @@
 {
 	"riots":{
-		"name": "Bon ba, révolte ? REVOLTE !",
-		"text":	"Capitaine, la situation commence à devenir intenable dans les niveaux inférieurs. La population se tourne vers le canibalisme, et des émeutes éclatent un peu partout. J'en conçois, c'est amusant à voir, mais la cargaison risque d'être endommagée.",
+		"name": "Revolte ? REVOLTE !",
+		"text":	"Capitaine, la situation commence à devenir intenable dans les niveaux inférieurs. La population se tourne vers le canibalisme, et des émeutes éclatent un peu partout. J'en conçois, c'est amusant, cela dit la cargaison de fuel risque d'être endommagée.",
+
 
 		"effects":[{
 				"gauge" : "population",
-				"apply" : "-5"
-		}
-		],
+				"apply" :"-5"
+		},
+
+		{
+				"gauge" : "fuel",
+				"apply" : "-2"
+		}],
+
 
 		"resolution" : [{
 				"ressource" : "security",
@@ -23,7 +29,7 @@
 			},
 			{
 				"name": "fuel",
-				"apply":"-10"
+				"apply":"-20"
 			}]
 		},
 
@@ -60,8 +66,6 @@
 		}
 		],
 
-
-
 			"ressource" :[{
 				"name": "security",
 				"apply": "5"
@@ -89,7 +93,7 @@
 		}],
 
 				"onResolve" : {
-			"text": "La population est très mécontente de votre décision de réparer la fuite !\n Un peu partout, de petits groupes ont tenté de se procurer le précieux gaz en éventrant des canalisations.\n Notre réserve d'oxygène en a souffert !",
+			"text": "La population est très mécontente de votre décision de réparer la fuite !\nUn peu partout, de petits groupes ont tenté de se procurer le précieux gaz en éventrant des canalisations.\nNotre réserve d'oxygène en a souffert !",
 			"gauge": [{
 				"name" : "oxygen",
 				"apply" : "-10"
@@ -97,7 +101,7 @@
 		},
 
 		"consequences" : [{
-			"turn" : "3",
+			"turn" : "2",
 			"name" :"orgy"
 
 		}],
@@ -123,7 +127,7 @@
 		"appear" : [
 			{"gauge": {
 				"name": "population",
-				"apply": "60"
+				"apply": "5"
 			}},
                    
 			{"gauge": {
@@ -144,7 +148,7 @@
 		},
 		{
 				"gauge": "fuel",
-				"apply": "-2"
+				"apply": "-5"
 		}],
 
 		"resolution" : [{
@@ -186,7 +190,7 @@
 		},
 		{
 				"gauge": "fuel",
-				"apply": "-5"
+				"apply": "-10"
 		}],
 
 		"resolution" : [{
@@ -213,17 +217,21 @@
 		
 		"effects":[{
 				"gauge" : "fuel",
-				"apply" : "15"
+				"apply" : "5"
 		}],
 
 		"resolution" : [{
 				"ressource" : "scrap",
 				"apply" : "-5"
-		},
-		{
-			"ressource": "security",
-			"apply" : "-3"
 		}],
+
+		"onResolve" : {
+			"text": "Les travailleurs membres des Saints Admirateurs Unifiés de la Glorieuse Novae sont outrés de votre décision !\nIls ont saboté les appareils nous procurant de l'oxygène et posé un préavis de grève.\nJe vous avais pourtant bien dit de ne pas prendre d'ouvriers français !",
+			"gauge": [{
+				"name" : "oxygen",
+				"apply" : "-10"
+			}]
+		},
 
 		"consequences" : [{
 			"turn" : "1",
@@ -239,7 +247,7 @@
 
 		"effects":[{
 				"gauge" : "fuel",
-				"apply" : "15"
+				"apply" : "5"
 		}],
 
 		"resolution" : [{
@@ -255,7 +263,7 @@
 			"text": "Les travailleurs membres des Saints Admirateurs Unifiés de la Glorieuse Novae sont outrés de votre décision !\n Ils ont saboté les appareils nous procurant de l'oxygène et posé un préavis de grève.\n Je vous avais pourtant bien dit de ne pas prendre d'ouvriers français !",
 			"gauge": [{
 				"name" : "oxygen",
-				"apply" : "-20"
+				"apply" : "-10"
 			}]
 		},
 
@@ -280,7 +288,7 @@
 
 		"effects":[{
 				"gauge" : "fuel",
-				"apply" : "15"
+				"apply" : "5"
 		}],
 
 		"resolution" : [{
@@ -292,6 +300,14 @@
 			"apply" : "-3"
 		}],
 
+		"onResolve" : {
+			"text": "Les travailleurs membres des Saints Admirateurs Unifiés de la Glorieuse Novae sont outrés de votre décision !\nIls ont saboté les appareils nous procurant de l'oxygène et posé un préavis de grève.\nJe vous avais pourtant bien dit de ne pas prendre d'ouvriers français !",
+			"gauge": [{
+				"name" : "oxygen",
+				"apply" : "-10"
+			}]
+		},
+
 		"appear":[{
 			"gauge":{
 				"name":"population",
@@ -300,7 +316,7 @@
 
 		},
 		{
-			"gauge":{
+			"resssource":{
 				"name": "security",
 				"appply" : "-2"
 		}}
@@ -308,7 +324,7 @@
 
 	},
 
-	"human fuel":{
+	"humanfuel":{
 
 		"name": "Aux grands maux les grands remèdes !",
 		"text":	"Devant votre absence de décision, les ingénieurs ont pris des initiatives disons... radicales. Ils utilisent certains membres de l'équipage comme combustibles. Heureusement, ils n'utilisent pour le moment que les personnes agées et les nourrissons !",
@@ -395,12 +411,8 @@
 		"text":	"Ce virus a fait de ces enfants des mutants d'une force incroyable ! Le personnel a bien tenté de les neutraliser en les privant de dessert, mais il s'en est suivi un caprice aux proportions dantesques ! Il faut envoyer l'armée, ou leur supprimer l'oxygène pendant un mois ou deux, histoire de calmer tout le monde.",
 
 		"effects":[{
-				"gauge" : "oxygen",
-				"apply" : "-5"
-		},
-		{
 				"gauge" : "population",
-				"apply" : "-5"
+				"apply" : "-10"
 		}
 		],
 

@@ -5,7 +5,7 @@
 
 		"effects":[{
 				"gauge" : "fuel",
-				"apply" : "15"
+				"apply" : "5"
 		}],
 
 		"resolution" : [{
@@ -14,16 +14,9 @@
 		}],
 
 		"consequences" : [{
-			"turn" : "2",
+			"turn" : "1",
 			"name" : "natural reflexes"
 
-		}],
-
-		"appear" : [{
-			"gauge" : {
-				"name": "fuel",
-				"apply" : "30"
-			}
 		}]
 
 	}

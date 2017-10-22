@@ -21,10 +21,19 @@
 
 		"consequences" : [{
 			"turn" : "1",
-			"name" : "human fuel"
+			"name" : "humanfuel"
 
+		}],
+
+		"onResolve" : {
+			"text": "Fantastique ! Les réparations marchent encore mieux que prévu !\nNous devrions même économiser un peu de carburant !",
+			"gauge": [{
+				"name" : "fuel",
+				"apply" : "10"
+			}]
 		}
-		]
+
+
 
 	}
 
