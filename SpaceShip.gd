@@ -44,8 +44,13 @@ func end_day():
 			cons.sector = crisis.sector
 			start_crisis(cons)
 			stop_crisis(crisis)
+		elif crisis.has("end") and int(crisis.end.turn) == crisis.current_turn:
+			stop_crisis(crisis)
 
 func start_day(day_number):
+	for crisis in current_crisis:
+		crisis.current_turn += 1
+	
 	# Start day gain
 	update_security(1)
 	update_food(1)
@@ -54,10 +59,6 @@ func start_day(day_number):
 	for sector in sectors_to_activate:
 		get_node(sector).activate()
 		sectors_to_activate.remove(sectors_to_activate.find(sector))
-	
-	for crisis in current_crisis:
-		if crisis.has("end") and int(crisis.end.turn) == crisis.current_turn:
-			stop_crisis(crisis)
 	
 	for part in get_tree().get_nodes_in_group("ship part"):
 		part.start_day(day_number)
@@ -84,14 +85,13 @@ func apply_crisis_effects(crisis):
 					end_game(crisis)
 			elif effect.has("ressource"):
 				update_resource(effect.ressource, int(effect.apply))
-	crisis.current_turn += 1
 
 #	 Add
 func start_crisis(crisis):
 	# This crisis will be live !
 	var c = crisis
 	c["current_turn"] = 0
-	c.id = randi() % 1000000
+	c.id = randi() % 100000000
 	current_crisis.append(c)
 	
 	Global.ui.pop_crisis(c)
@@ -111,11 +111,12 @@ func start_crisis(crisis):
 
 # 	Remove
 func stop_crisis(crisis):
+	print("stop crisis : ", crisis.name)
 	current_crisis.remove(current_crisis.find(crisis))
 	Global.ui.delete_popup(crisis)
 	if crisis.has("sector"):
 		crisis.sector.stop_crisis(crisis)
-	emit_signal("remove crisis", crisis)
+	emit_signal("remove_crisis", crisis)
 
 func has_resources_to_resolve(crisis):
 	if crisis.has("resolution"):

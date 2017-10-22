@@ -33,12 +33,15 @@ func new_crisis(crisis):
 	if crisis.has("effects"):
 		for effect in crisis.effects:
 			if effect.has("gauge") and effect.gauge.capitalize() == get_name():
+#				print("Crisis ", crisis.name, " added ", effect.apply, " to the gauge ", get_name())
 				current_state += int(effect.apply)
 				set_recap_text()
 
 func crisis_solved(crisis):
+#	print("triggered, ", crisis)
 	if crisis.has("effects"):
 		for effect in crisis.effects:
 			if effect.has("gauge") and effect.gauge.capitalize() == get_name():
+#				print("Crisis ", crisis.name, " removed ", effect.apply, " from the gauge ", get_name())
 				current_state -= int(effect.apply)
 				set_recap_text()
