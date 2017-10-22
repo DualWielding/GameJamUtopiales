@@ -42,12 +42,6 @@
 
 		},
 
-		"effects":[{
-				"gauge" : "population",
-				"apply" : "-5"
-		}
-		],
-
 		"resolution" : [{
 				"ressource" : "security",
 				"apply" : "-5"
@@ -160,11 +154,11 @@
 		
 		"effects":[{
 				"gauge" : "population",
-				"apply" : "-10"
+				"apply" : "-5"
 		},
 		{
 				"gauge": "fuel",
-				"apply": "-10"
+				"apply": "-5"
 		}],
 
 		"resolution" : [{
