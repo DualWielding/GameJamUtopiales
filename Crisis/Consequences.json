@@ -16,7 +16,7 @@
 		],
 
 		"onResolve" : {
-			"text": "Monsieur, il semblerait que les émeutiers n'aient pas apprécié votre intervention !\n Notre service de sécurité s'est retrouvé face à de véritables sauvages cannibales.\n Ils ont dû puiser dans les réserves de fuel pour... \nBref, je vous passe les détails, mais les CENDRES de la révolte sont belles et bien éteintes.",
+			"text": "Monsieur, il semblerait que les émeutiers n'aient pas apprécié votre intervention !\n Notre service de sécurité s'est retrouvé face à de véritables sauvages cannibales.\n Ils ont dû puiser dans les réserves de fuel pour... \nBref, je vous passe les détails, mais les BRAISES de la révolte sont belles et bien éteintes.",
 			"gauge": [{
 				"name" : "population",
 				"apply" : "-5"
@@ -153,6 +153,14 @@
 		}
 		],
 
+		"onResolve" : {
+			"text": "Ourah ! Le monstre xénos est mort, capitaine ! La seule survivante de l'équipe\nd'intervention raconte que même son sang était corrosif. Quelle effroyable créature !\n Oh, d'ailleurs le sang s'est répandu dans les conduites d'eau potable et provoqué la mort de milliers d'innocents.\n Mais des innocents majoritairement pauvres et inutiles, je vous rassure !",
+			"gauge": [{
+				"name" : "population",
+				"apply" : "-20"
+			}]
+		},
+
 		"consequences" : [{
 			"turn" : "3",
 			"name" : "alien babies"
@@ -188,7 +196,15 @@
 		{
 				"ressource": "scrap",
 				"apply" : "-5"
-		}]
+		}],
+
+		"onResolve" : {
+			"text": "Ourah ! Le monstre xénos est mort, capitaine ! La seule survivante de l'équipe\nd'intervention raconte que même son sang était corrosif. Quelle effroyable créature !\nOh, d'ailleurs le sang s'est répandu dans les conduites d'eau potable et provoqué la mort de milliers d'innocents.\nQuoique après réflexion, ils devaient sûrement avoir des choses à se repprocher pour mériter un tel sort.",
+			"gauge": [{
+				"name" : "population",
+				"apply" : "-20"
+			}]
+		}
 	},
 
 	"natural reflexes":{
@@ -311,7 +327,19 @@
 				"ressource" : "scrap",
 				"apply" : "-10"
 		}
-		]
+		],
+
+		"onResolve" : {
+			"text": "Je suis d'accord avec vous : utiliser les impotents comme combustile est inhumain\nlorsqu'on peut s'en servir pour nourrir les plus démunis. Les passagers aussi semblent\napprécier, regardez les redoubler d'efforts au travail ! ",
+			"gauge": [{
+				"name" : "oxygen",
+				"apply" : "5"
+			},
+			{
+				"name": "fuel",
+				"apply":"5"
+			}]
+		}
 	},
 
 	"gouzi gouzargh":{

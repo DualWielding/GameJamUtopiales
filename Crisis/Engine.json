@@ -20,7 +20,7 @@
 		],
 
 		"consequences" : [{
-			"turn" : "3",
+			"turn" : "1",
 			"name" : "human fuel"
 
 		}

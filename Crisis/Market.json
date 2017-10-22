@@ -12,6 +12,14 @@
 				"apply": "-3"
 		}],
 
+		"onResolve" : {
+			"text": "Oups ! La créature n'était en fait qu'un campement de passagers clandestins. Nos gardes\nayant sans doute vu trop de films d'horreur se passant dans l'espace, ont paniqué et tiré dans le tas...\nLa populace outrée s'est empressée de les lyncher et de tout casser dans le secteur !",
+			"gauge": [{
+				"name" : "fuel",
+				"apply" : "-20"
+			}]
+		},
+
 		"consequences" : [{
 			"turn" : "1",
 			"name" : "stowaway"
@@ -34,6 +42,13 @@
 				"apply": "-3"
 		}],
 
+		"onResolve" : {
+			"text": "Il s'est avéré que toute cette histoire n'était en fait qu'une vaste plaisanterie.\nRien de plus que des passagers ayant manifestement regardé trop d'holo-films de science fiction.",
+			"gauge": [{
+				"name" : "",
+				"apply" : ""
+			}]
+		},
 		"end":{
 			"turn": "1",
 			"text" : "Il s'est avéré que toute cette histoire n'était en fait qu'une vaste plaisanterie. Simplement des passagers ayant manifestement regardé trop d'holo-films."
