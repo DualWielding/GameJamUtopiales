@@ -30,6 +30,11 @@ func activate_popups(sector):
 		if popup.get_crisis().sector == sector:
 			popup.pop()
 
+func reset():
+	current_day = 0
+	ship.reset()
+	ui.reset()
+
 func translate(word):
 	if word == "food":
 		return "nourriture"

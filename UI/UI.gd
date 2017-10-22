@@ -5,6 +5,10 @@ var crisis_popup_class = preload("res://UI/CrisisPopup.tscn")
 func _ready():
 	Global.ui = self
 
+func reset():
+	for popup in get_node("crisis popup").get_children():
+		popup.queue_free()
+
 func pop_crisis(crisis):
 	var cp = crisis_popup_class.instance()
 	cp.set_name(str(crisis.id))

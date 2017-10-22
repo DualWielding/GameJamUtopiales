@@ -1,0 +1,337 @@
+[gd_scene load_steps=9 format=1]
+
+[ext_resource path="res://Menus/HowToPlay.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/BACKGROUND.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/scrap.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/food.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/security.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/oxygen.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/fuel.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/population.png" type="Texture" id=8]
+
+[node name="HowToPlay" type="Control"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+script/script = ExtResource( 1 )
+
+[node name="TextureFrame" type="TextureFrame" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -75.0
+margin/top = -226.0
+margin/right = 1576.0
+margin/bottom = 814.0
+texture = ExtResource( 2 )
+stretch_mode = 0
+
+[node name="Popup1" type="AcceptDialog" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 144.0
+margin/top = 104.0
+margin/right = 874.0
+margin/bottom = 469.0
+popup/exclusive = false
+window/title = "Pour commencer..."
+dialog/hide_on_ok = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Popup1"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 5.0
+margin/top = 10.0
+margin/right = 731.0
+margin/bottom = 323.0
+bbcode/enabled = true
+bbcode/bbcode = "[b]Despair[/b] est un jeu de gestion de crise au [b]tour par tour[/b] dans lequel vous incarnez un capitaine en charge d'amener un vaisseau (ou ce qu'il en restera à sa destination.
+
+Pour cela, vous devrez prendre les bonnes décisions pour régler les crises ou laisser vos passagers les régler tout seul.
+Le jeu s'arrête lorsque l'[b]une[/b] de vos ressources vitales atteint 0.
+
+Cependant, toutes les crises ne sont pas bonnes à résoudre sur le champs..."
+visible_characters = -1
+percent_visible = 1.0
+
+[node name="Popup2" type="AcceptDialog" parent="."]
+
+editor/display_folded = true
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 144.0
+margin/top = 104.0
+margin/right = 885.0
+margin/bottom = 470.0
+popup/exclusive = false
+window/title = "Les points importants (1)"
+dialog/hide_on_ok = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Popup2"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 314.0
+margin/bottom = 104.0
+bbcode/enabled = true
+bbcode/bbcode = "[u]Ressources[/u] :
+Les crises se résolvent grâce aux ressources ou aux tours qui passent.
+Vous gagnez [b]1[/b] ressource [b]chaque tour[/b]."
+visible_characters = -1
+percent_visible = 1.0
+
+[node name="Scrap" type="TextureFrame" parent="Popup2"]
+
+rect/scale = Vector2( 0.4, 0.4 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 17.0
+margin/top = 228.0
+margin/right = 167.0
+margin/bottom = 353.0
+texture = ExtResource( 3 )
+stretch_mode = 0
+
+[node name="Kebab" type="TextureFrame" parent="Popup2"]
+
+rect/scale = Vector2( 0.4, 0.4 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 17.0
+margin/top = 161.0
+margin/right = 167.0
+margin/bottom = 286.0
+texture = ExtResource( 4 )
+stretch_mode = 0
+
+[node name="Helmet" type="TextureFrame" parent="Popup2"]
+
+rect/scale = Vector2( 0.4, 0.4 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 17.0
+margin/top = 88.0
+margin/right = 167.0
+margin/bottom = 213.0
+texture = ExtResource( 5 )
+stretch_mode = 0
+
+[node name="Label 2" type="Label" parent="Popup2"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 136.0
+margin/top = 113.0
+margin/right = 260.0
+margin/bottom = 127.0
+text = "Pièces de rechange"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label5" type="Label" parent="Popup2"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 502.0
+margin/top = 113.0
+margin/right = 626.0
+margin/bottom = 127.0
+text = "Oxygène"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label3" type="Label" parent="Popup2"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 134.0
+margin/top = 172.0
+margin/right = 258.0
+margin/bottom = 186.0
+text = "Nourriture"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label6" type="Label" parent="Popup2"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 503.0
+margin/top = 172.0
+margin/right = 627.0
+margin/bottom = 186.0
+text = "Population"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label4" type="Label" parent="Popup2"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 132.0
+margin/top = 240.0
+margin/right = 256.0
+margin/bottom = 254.0
+text = "Pièces de rechange"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label7" type="Label" parent="Popup2"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 500.0
+margin/top = 240.0
+margin/right = 624.0
+margin/bottom = 254.0
+text = "Essence"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="RichTextLabel 2" type="RichTextLabel" parent="Popup2"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 356.0
+margin/top = 0.0
+margin/right = 740.0
+margin/bottom = 86.0
+bbcode/enabled = true
+bbcode/bbcode = "[u]Jauges vitales[/u] :
+Ces jauges représentent les besoins vitaux de votre vaisseau. Si l'une d'elles atteint 0, c'est la fin de la partie !"
+visible_characters = -1
+percent_visible = 1.0
+
+[node name="TextureFrame" type="TextureFrame" parent="Popup2"]
+
+rect/scale = Vector2( 0.4, 0.4 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 661.0
+margin/top = 90.0
+margin/right = 811.0
+margin/bottom = 215.0
+texture = ExtResource( 6 )
+stretch_mode = 0
+
+[node name="TextureFrame1" type="TextureFrame" parent="Popup2"]
+
+rect/scale = Vector2( 0.4, 0.4 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 651.0
+margin/top = 216.0
+margin/right = 801.0
+margin/bottom = 341.0
+texture = ExtResource( 7 )
+stretch_mode = 0
+
+[node name="TextureFrame2" type="TextureFrame" parent="Popup2"]
+
+rect/scale = Vector2( 0.4, 0.4 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 659.0
+margin/top = 150.0
+margin/right = 809.0
+margin/bottom = 275.0
+texture = ExtResource( 8 )
+stretch_mode = 0
+
+[node name="Popup3" type="AcceptDialog" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 145.0
+margin/top = 102.0
+margin/right = 889.0
+margin/bottom = 472.0
+popup/exclusive = false
+window/title = "Les points importants (2)"
+dialog/hide_on_ok = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Popup3"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 2.0
+margin/top = 19.0
+margin/right = 745.0
+margin/bottom = 228.0
+bbcode/enabled = true
+bbcode/bbcode = "[u]Crises[/u] :
+Les crises se déclenchent une fois par tour, dans un espace du vaisseau. Elles vous [b]coûtent[/b] ou vous font [b]gagner[/b] un certain nombre de ressources vitales [b]tant qu'elles ne sont pas résolues[b].
+
+Certaines peuvent s'étaler sur plusieurs tours. Elles peuvent [b]dégénérer[/b], ou [b]se résoudre d'elles mêmes[/b].
+
+Les crises sont localisées dans les différentes pièces qui composent votre vaisseau. Cliquez sur ces pièces pour faire apparaître ou pour revenir sur le rapport de crise.
+
+
+
+																																		Bonne chance, capitaine !"
+visible_characters = -1
+percent_visible = 1.0
+
+[connection signal="confirmed" from="Popup1" to="." method="_on_Popup1_confirmed"]
+
+[connection signal="confirmed" from="Popup2" to="." method="_on_Popup2_confirmed"]
+
+[connection signal="confirmed" from="Popup3" to="." method="_on_Popup3_confirmed"]
+
+

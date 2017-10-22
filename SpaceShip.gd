@@ -35,6 +35,20 @@ func _ready():
 	Global.ship = self
 	get_node("AnimationPlayer").play("Float")
 
+func reset():
+	current_crisis = []
+	sectors_to_activate = ["Slum"]
+	inactive_sectors = ["Nursery", "Estate", "Market", "CommandDeck", "Docks", "Engine"]
+	update_food(-food + 5)
+	update_security(-security + 5)
+	update_scrap(-scrap + 5)
+	update_population(-population + 50)
+	update_fuel(-fuel + 50)
+	update_oxygen(-oxygen + 50)
+	
+	for sector in get_tree().get_nodes_in_group("ship part"):
+		sector.reset()
+
 func end_day():
 	Global.ui.hide_popups()
 	
@@ -218,5 +232,4 @@ func signal_resource(name, current_value, max_value):
 	emit_signal("update_resource", name, current_value, max_value)
 
 func end_game(crisis):
-	print("You lost")
-	get_tree().quit()
+	get_tree().change_scene("res://Menus/GameOver.tscn")
