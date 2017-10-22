@@ -111,10 +111,11 @@ func stop_crisis(crisis):
 		crisis.sector.stop_crisis(crisis)
 
 func has_resources_to_resolve(crisis):
-	for resolution_requirement in crisis.resolution:
-		if get(resolution_requirement.ressource) + int(resolution_requirement.apply) < 0:
-			return false
-	return true
+	if crisis.has("resolution"):
+		for resolution_requirement in crisis.resolution:
+			if get(resolution_requirement.ressource) + int(resolution_requirement.apply) < 0:
+				return false
+		return true
 
 func resolve_crisis(crisis):
 	if has_resources_to_resolve(crisis):
