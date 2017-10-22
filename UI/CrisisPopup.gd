@@ -42,6 +42,9 @@ func update_ui():
 	if !Global.ship.has_resources_to_resolve(_crisis):
 		get_node("Resolve").set_text("Pas assez de ressources...")
 		get_node("Resolve").set_disabled(true)
+	else:
+		get_node("Resolve").set_text("Résoudre la crise")
+		get_node("Resolve").set_disabled(false)
 
 func set_crisis(crisis):
 	_crisis = crisis

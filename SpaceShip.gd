@@ -36,6 +36,7 @@ func _ready():
 	get_node("AnimationPlayer").play("Float")
 
 func end_day():
+	Global.ui.hide_popups()
 	for crisis in current_crisis:
 		apply_crisis_effects(crisis)
 	
@@ -55,6 +56,7 @@ func start_day(day_number):
 	update_security(1)
 	update_food(1)
 	update_scrap(1)
+	Global.ui.update_popups()
 	
 	for sector in sectors_to_activate:
 		get_node(sector).activate()
@@ -120,6 +122,7 @@ func stop_crisis(crisis):
 func has_resources_to_resolve(crisis):
 	if crisis.has("resolution"):
 		for resolution_requirement in crisis.resolution:
+			print("res name : ", resolution_requirement.ressource, "res : ", get(resolution_requirement.ressource), ", cost : ", int(resolution_requirement.apply))
 			if get(resolution_requirement.ressource) + int(resolution_requirement.apply) < 0:
 				return false
 		return true

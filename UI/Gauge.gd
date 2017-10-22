@@ -1,5 +1,7 @@
 extends Control
 
+var floating_text_class = preload("res://UI/FloatingText.tscn")
+
 onready var gauge = get_node("TextureProgress")
 onready var recap = get_node("Recap")
 
@@ -20,6 +22,10 @@ func get_start_values():
 
 func update(name, current_value, max_value):
 	if name.capitalize() == get_name():
+		var ft = floating_text_class.instance()
+		ft.set_text(str(current_value - gauge.get_value()))
+		ft.set_pos(Vector2(rand_range(-40, 40), rand_range(150, 50)))
+		add_child(ft)
 		gauge.set_value(current_value)
 
 func set_recap_text():
