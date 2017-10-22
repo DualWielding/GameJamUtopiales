@@ -5,11 +5,11 @@
 
 		"effects":[{
 				"gauge" : "population",
-				"apply" : "12"
+				"apply" : "7"
 		},
 	        {
 				"gauge" : "oxygen",
-				"apply" : "-5"
+				"apply" : "-2"
 		}],
 
 		"resolution" : [{

@@ -4,8 +4,8 @@
 		"text":	"Capitaine, nos senseurs s'affolent ! Nous avons detecté une énorme quantité d'énergie dû à l'effondrement d'une étoile à quelques parsecs de cela. Nos appareils emmagasinent l'énergie, mais nous devrions peut être mettre en place les boucliers solaires.",
 
 		"effects":[{
-				"gauge" : "fuel",
-				"apply" : "5"
+				"gauge" : "oxygen",
+				"apply" : "2"
 		}],
 
 		"resolution" : [{

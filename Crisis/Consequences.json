@@ -84,7 +84,7 @@
 
 		{
 				"gauge" : "oxygen",
-				"apply" : "-5"
+				"apply" : "-2"
 		}],
 
 		"resolution" : [{
@@ -326,7 +326,7 @@
 
 	"humanfuel":{
 
-		"name": "Aux grands maux les grands remèdes !",
+		"name": "Aux grands mômes les grands remèdes !",
 		"text":	"Devant votre absence de décision, les ingénieurs ont pris des initiatives disons... radicales. Ils utilisent certains membres de l'équipage comme combustibles. Heureusement, ils n'utilisent pour le moment que les personnes agées et les nourrissons !",
 
 		"effects":[{
@@ -364,9 +364,14 @@
 
 		"effects":[{
 				"gauge" : "population",
-				"apply" : "-7"
-		}
-		],
+				"apply" :"-5"
+		},
+
+		{
+				"gauge" : "oxygen",
+				"apply" : "-3"
+		}],
+
 
 		"resolution" : [{
 				"ressource" : "food",
