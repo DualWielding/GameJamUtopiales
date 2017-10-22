@@ -37,9 +37,11 @@ func _ready():
 
 func end_day():
 	Global.ui.hide_popups()
+	
 	for crisis in current_crisis:
 		apply_crisis_effects(crisis)
 	
+	for crisis in current_crisis:
 		if crisis.has("consequences") and int(crisis.consequences[0].turn) == crisis.current_turn:
 			var cons = Consequences.get(crisis.consequences[0].name)
 			cons.sector = crisis.sector
@@ -122,7 +124,6 @@ func stop_crisis(crisis):
 func has_resources_to_resolve(crisis):
 	if crisis.has("resolution"):
 		for resolution_requirement in crisis.resolution:
-			print("res name : ", resolution_requirement.ressource, "res : ", get(resolution_requirement.ressource), ", cost : ", int(resolution_requirement.apply))
 			if get(resolution_requirement.ressource) + int(resolution_requirement.apply) < 0:
 				return false
 		return true
@@ -175,11 +176,11 @@ func update_population(value):
 
 func update_fuel(value):
 	fuel += value
-	signal_gauge("fuel", population)
+	signal_gauge("fuel", fuel)
 
 func update_oxygen(value):
 	oxygen += value
-	signal_gauge("oxygen", population)
+	signal_gauge("oxygen", oxygen)
 
 func signal_gauge(name, current_value):
 	emit_signal("update_gauge", name, current_value, 100)
@@ -217,4 +218,5 @@ func signal_resource(name, current_value, max_value):
 	emit_signal("update_resource", name, current_value, max_value)
 
 func end_game(crisis):
+	print("You lost")
 	get_tree().quit()
