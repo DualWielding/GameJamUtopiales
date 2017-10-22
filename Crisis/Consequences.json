@@ -16,7 +16,7 @@
 		],
 
 		"onResolve" : {
-			"text": "Monsieur, il semblerait que les émeutiers n'aient pas apprécié votre intervention ! Notre service de sécurité s'est retrouvé face à de véritables sauvages cannibales. Ils ont dû puiser dans les réserves de fuel pour... Bref, je vous passe les détails, mais les CENDRES de la révolte sont belles et bien éteintes.",
+			"text": "Monsieur, il semblerait que les émeutiers n'aient pas apprécié votre intervention !\n Notre service de sécurité s'est retrouvé face à de véritables sauvages cannibales.\n Ils ont dû puiser dans les réserves de fuel pour... \nBref, je vous passe les détails, mais les CENDRES de la révolte sont belles et bien éteintes.",
 			"gauge": [{
 				"name" : "population",
 				"apply" : "-5"
@@ -89,7 +89,7 @@
 		}],
 
 				"onResolve" : {
-			"text": "La population est très mécontente de votre décision de réparer la fuite ! Un peu partout, de petits groupes ont tenté de se procurer le précieux gaz en éventrant des canalisations. Notre réserve d'oxygène en a souffert !",
+			"text": "La population est très mécontente de votre décision de réparer la fuite !\n Un peu partout, de petits groupes ont tenté de se procurer le précieux gaz en éventrant des canalisations.\n Notre réserve d'oxygène en a souffert !",
 			"gauge": [{
 				"name" : "oxygen",
 				"apply" : "-10"
@@ -235,6 +235,14 @@
 			"apply" : "-3"
 		}],
 
+		"onResolve" : {
+			"text": "Les travailleurs membres des Saints Admirateurs Unifiés de la Glorieuse Novae sont outrés de votre décision !\n Ils ont saboté les appareils nous procurant de l'oxygène et posé un préavis de grève.\n Je vous avais pourtant bien dit de ne pas prendre d'ouvriers français !",
+			"gauge": [{
+				"name" : "oxygen",
+				"apply" : "-20"
+			}]
+		},
+
 		"consequences" : [{
 			"turn" : "1",
 			"name" : "novae ultima"
@@ -326,6 +334,25 @@
 		}
 		],
 
+		"onResolve" : {
+			"text": "Nos hommes se sont bien battus, et la situation est sous contrôle !\n La bonne nouvelle, c'est qu'il s'avère que les mutants ont un gout délicieux.\n La mauvaise, c'est que les combats ont endommagé de nombreux appareils...",
+			"gauge": [{
+				"name" : "oxygen",
+				"apply" : "-10"
+			
+			}],
+			"gauge": [{
+				"name" : "fuel",
+				"apply" : "-10"
+			
+			}],
+			"gauge": [{
+				"name" : "population",
+				"apply" : "10"
+			
+			}]
+		},
+
 		"consequences" : [{
 			"turn" : "1",
 			"name" : "enought"
@@ -354,6 +381,25 @@
 				"apply" : "15"
 		}
 		],
+
+		"onResolve" : {
+			"text": "Nos hommes se sont bien battus, et la situation est sous contrôle !\n La bonne nouvelle, c'est qu'il s'avère que les mutants ont un gout délicieux.\n La mauvaise, c'est que les combats ont endommagé de nombreux appareils...",
+			"gauge": [{
+				"name" : "oxygen",
+				"apply" : "-10"
+			
+			}],
+			"gauge": [{
+				"name" : "fuel",
+				"apply" : "-10"
+			
+			}],
+			"gauge": [{
+				"name" : "population",
+				"apply" : "10"
+			
+			}]
+		},
 
 		"consequences" : [{
 			"turn" : "3",
