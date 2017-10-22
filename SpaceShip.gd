@@ -21,6 +21,8 @@ var inactive_sectors = ["Nursery", "Estate", "Market", "CommandDeck", "Docks", "
 
 signal update_gauge(name, current_value, max_value)
 signal update_resource(name, current_value, max_value)
+signal add_crisis(crisis)
+signal remove_crisis(crisis)
 
 func _ready():
 	update_food(5)
@@ -92,6 +94,7 @@ func start_crisis(crisis):
 	current_crisis.append(c)
 	
 	Global.ui.pop_crisis(crisis)
+	emit_signal("add_crisis", crisis)
 	
 	if !c.has("appear"): return
 	for appear_effect in c.appear:
@@ -103,12 +106,14 @@ func start_crisis(crisis):
 			update_resource(appear_effect.resource.name, int(appear_effect.resource.apply))
 		if appear_effect.has("sector"):
 			sectors_to_activate.append(appear_effect.sector)
+	
 
 # 	Remove
 func stop_crisis(crisis):
 	current_crisis.remove(current_crisis.find(crisis))
 	if crisis.has("sector"):
 		crisis.sector.stop_crisis(crisis)
+	emit_signal("remove crisis", crisis)
 
 func has_resources_to_resolve(crisis):
 	if crisis.has("resolution"):

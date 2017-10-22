@@ -57,4 +57,18 @@ mode = 3
 radial_fill/fill_degrees = 360.0
 radial_fill/center_offset = Vector2( 0, 0 )
 
+[node name="Recap" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 3.0
+margin/top = 184.0
+margin/right = 43.0
+margin/bottom = 198.0
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
 
