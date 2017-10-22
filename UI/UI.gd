@@ -12,6 +12,10 @@ func pop_crisis(crisis):
 	cp.set_crisis(crisis)
 	get_node("CrisisPopups").add_child(cp)
 
+func hide_popups():
+	for popup in get_node("CrisisPopups").get_children():
+		popup.hide()
+
 func delete_popup(crisis):
 	get_node(str("CrisisPopups/", crisis.id)).queue_free()
 

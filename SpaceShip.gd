@@ -36,9 +36,12 @@ func _ready():
 	get_node("AnimationPlayer").play("Float")
 
 func end_day():
+	Global.ui.hide_popups()
+	
 	for crisis in current_crisis:
 		apply_crisis_effects(crisis)
 	
+	for crisis in current_crisis:
 		if crisis.has("consequences") and int(crisis.consequences[0].turn) == crisis.current_turn:
 			var cons = Consequences.get(crisis.consequences[0].name)
 			cons.sector = crisis.sector
@@ -55,6 +58,7 @@ func start_day(day_number):
 	update_security(1)
 	update_food(1)
 	update_scrap(1)
+	Global.ui.update_popups()
 	
 	for sector in sectors_to_activate:
 		get_node(sector).activate()
@@ -172,11 +176,11 @@ func update_population(value):
 
 func update_fuel(value):
 	fuel += value
-	signal_gauge("fuel", population)
+	signal_gauge("fuel", fuel)
 
 func update_oxygen(value):
 	oxygen += value
-	signal_gauge("oxygen", population)
+	signal_gauge("oxygen", oxygen)
 
 func signal_gauge(name, current_value):
 	emit_signal("update_gauge", name, current_value, 100)
@@ -214,4 +218,5 @@ func signal_resource(name, current_value, max_value):
 	emit_signal("update_resource", name, current_value, max_value)
 
 func end_game(crisis):
+	print("You lost")
 	get_tree().quit()

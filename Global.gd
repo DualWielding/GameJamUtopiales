@@ -22,7 +22,7 @@ func next_day():
 		ship.start_day(current_day)
 
 func you_won():
-	print("you won")
+	print("You won")
 	get_tree().quit()
 
 func activate_popups(sector):
