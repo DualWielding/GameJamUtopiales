@@ -1,7 +1,7 @@
 {
 	"-1":{
 		"name": "Fuite de gaz!",
-		"text":	"Nos scanners indiquent une importante fuite de protoxyde d'azote dans ce secteur. Bien qu'innoffensif, le gaz semble avoir un effet... aphrodisiaque sur la population.",
+		"text":	"Nos scanners indiquent une importante fuite de protoxyde d'azote dans ce secteur. Bien qu'innoffensif, le gaz semble avoir un effet euphorisant et... aphrodisiaque sur la population.",
 
 		"effects":[{
 				"gauge" : "population",
@@ -16,6 +16,14 @@
 				"ressource" : "scrap",
 				"apply" : "-5"
 		}],
+
+		"onResolve" : {
+			"text": "La population est très mécontente de votre décision de réparer la fuite ! Un peu partout, de petits groupes ont tenté de se procurer le précieux gaz en éventrant des canalisations. Notre réserve d'oxygène en a souffert !",
+			"gauge": [{
+				"name" : "oxygen",
+				"apply" : "-10"
+			}]
+		},
 
 		"consequences" : [{
 			"turn" : 1,
