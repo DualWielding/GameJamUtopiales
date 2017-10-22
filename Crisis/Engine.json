@@ -5,7 +5,7 @@
 
 		"effects":[{
 				"gauge" : "fuel",
-				"apply" : "5"
+				"apply" : "-5"
 		},
 		{
 			"ressource" : "food",
