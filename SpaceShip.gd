@@ -91,10 +91,11 @@ func start_crisis(crisis):
 	# This crisis will be live !
 	var c = crisis
 	c["current_turn"] = 0
+	c.id = randi() % 1000000
 	current_crisis.append(c)
 	
-	Global.ui.pop_crisis(crisis)
-	emit_signal("add_crisis", crisis)
+	Global.ui.pop_crisis(c)
+	emit_signal("add_crisis", c)
 	
 	if !c.has("appear"): return
 	for appear_effect in c.appear:
@@ -111,6 +112,7 @@ func start_crisis(crisis):
 # 	Remove
 func stop_crisis(crisis):
 	current_crisis.remove(current_crisis.find(crisis))
+	Global.ui.delete_popup(crisis)
 	if crisis.has("sector"):
 		crisis.sector.stop_crisis(crisis)
 	emit_signal("remove crisis", crisis)
