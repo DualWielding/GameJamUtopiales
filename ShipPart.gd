@@ -22,6 +22,13 @@ func _ready():
 	set_process(true)
 	set_process_input(true)
 
+func reset():
+	activated = false
+	on_crisis = false
+	
+	_crisis = {} # { turn: "crisis_name" }
+	mouse_in = false
+
 func _process(delta):
 	var sprite = get_node("Sprite")
 	if mouse_in:
