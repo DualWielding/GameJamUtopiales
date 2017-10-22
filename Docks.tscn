@@ -7,7 +7,7 @@
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -90.0216, 11.7052, -94.5657, -6.47141, 139.458, -15.5597, 139.458, 4.88898, 50.8468, 57.1466, 16.7657, 52.6025 )
+points = Vector2Array( -119.559, 16.2493, -117.286, -31.4642, 159.906, -38.2804, 178.083, 36.698, 50.8468, 57.1466, -46.8522, 66.2349 )
 
 [node name="Docks" instance=ExtResource( 1 )]
 
@@ -31,7 +31,7 @@ angular_damp = 1.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 
 build_mode = 0
-polygon = Vector2Array( -90.0216, 11.7052, -94.5657, -6.47141, 139.458, -15.5597, 139.458, 4.88898, 50.8468, 57.1466, 16.7657, 52.6025 )
+polygon = Vector2Array( -119.559, 16.2493, -117.286, -31.4642, 159.906, -38.2804, 178.083, 36.698, 50.8468, 57.1466, -46.8522, 66.2349 )
 shape_range = Vector2( 0, 0 )
 trigger = false
 
