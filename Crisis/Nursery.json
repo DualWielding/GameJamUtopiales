@@ -9,6 +9,10 @@
 		}
 		],
 
+		"onResolve" : {
+			"text": "Nos scientifiques vous remercient chaleureusement pour les appareils de pointe !\n Grace à eux, ils sont en mesure de vous affirmer qu'il s'agit en réalité...\n D'une forme de varicelle. Je vous l'avais dit, qu'il n'y avait rien à craindre.",
+		},
+
 		"consequences" : [{
 			"turn" : "1",
 			"name" : "gouzi gouzargh"
