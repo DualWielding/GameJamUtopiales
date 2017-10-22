@@ -111,7 +111,6 @@ func start_crisis(crisis):
 
 # 	Remove
 func stop_crisis(crisis):
-	print("stop crisis : ", crisis.name)
 	current_crisis.remove(current_crisis.find(crisis))
 	Global.ui.delete_popup(crisis)
 	if crisis.has("sector"):
@@ -129,6 +128,21 @@ func resolve_crisis(crisis):
 	if has_resources_to_resolve(crisis):
 		for resolution_requirement in crisis.resolution:
 			update_resource(resolution_requirement.ressource, int(resolution_requirement.apply))
+		
+		if crisis.has("onResolve"):
+			var popup = AcceptDialog.new()
+			popup.connect("confirmed", popup, "queue_free")
+			var text = str(crisis.onResolve.text, "\n Conséquences:")
+			
+			for cost in crisis.onResolve.gauges:
+				text = str(text, "\n    ", cost.apply, " ", Global.translate(cost.name))
+				update_gauge(cost.name, int(cost.apply))
+			
+			popup.set_text(text)
+			popup.set_title(str("Conséquences de ", crisis.name, "    "))
+			popup.set_pos(Vector2(100, 100))
+			Global.ui.add_child(popup)
+			popup.show()
 		stop_crisis(crisis)
 	
 	else:

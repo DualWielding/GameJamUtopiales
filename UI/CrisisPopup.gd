@@ -22,7 +22,7 @@ func init():
 				thing_to_decrease = effect.gauge
 			else:
 				thing_to_decrease = effect.ressource
-			effect_text = str(effect_text, "    ", effect.apply, " ", translate(thing_to_decrease), " / tour\n")
+			effect_text = str(effect_text, "    ", effect.apply, " ", Global.translate(thing_to_decrease), " / tour\n")
 	
 	get_node("Effects").set_bbcode(effect_text)
 	
@@ -30,7 +30,7 @@ func init():
 	if _crisis.has("resolution"):
 		cost_text = "[b]Coûts de résolution[/b] :\n"
 		for cost in _crisis.resolution:
-			cost_text = str(cost_text, "    ", cost.apply, " ", translate(cost.ressource), "\n")
+			cost_text = str(cost_text, "    ", cost.apply, " ", Global.translate(cost.ressource), "\n")
 	get_node("ResolutionCosts").set_bbcode(cost_text)
 	
 	if _crisis.has("is_consequence") and _crisis.is_consequence:
@@ -64,16 +64,3 @@ func _on_Procrastinate_pressed():
 func pop():
 	get_node("AnimationPlayer").play("Pop")
 	show()
-
-func translate(word):
-	if word == "food":
-		return "nourriture"
-	if word == "fuel":
-		return "carburant"
-	if word == "oxygen":
-		return "oxygène"
-	if word == "security":
-		return "unité d'intervention"
-	if word == "scrap":
-		return "pièces détachées"
-	return word

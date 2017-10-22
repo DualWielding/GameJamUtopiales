@@ -29,3 +29,16 @@ func activate_popups(sector):
 	for popup in get_tree().get_nodes_in_group("crisis popup"):
 		if popup.get_crisis().sector == sector:
 			popup.pop()
+
+func translate(word):
+	if word == "food":
+		return "nourriture"
+	if word == "fuel":
+		return "carburant"
+	if word == "oxygen":
+		return "oxygène"
+	if word == "security":
+		return "unité d'intervention"
+	if word == "scrap":
+		return "pièces détachées"
+	return word
