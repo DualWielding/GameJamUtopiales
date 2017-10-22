@@ -134,7 +134,7 @@ func resolve_crisis(crisis):
 			popup.connect("confirmed", popup, "queue_free")
 			var text = str(crisis.onResolve.text, "\n Conséquences:")
 			
-			for cost in crisis.onResolve.gauges:
+			for cost in crisis.onResolve.gauge:
 				text = str(text, "\n    ", cost.apply, " ", Global.translate(cost.name))
 				update_gauge(cost.name, int(cost.apply))
 			
