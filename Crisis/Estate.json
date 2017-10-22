@@ -5,7 +5,7 @@
 
 		"effects":[{
 				"gauge" : "population",
-				"apply" : "10"
+				"apply" : "12"
 		},
 	        {
 				"gauge" : "oxygen",

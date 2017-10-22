@@ -1,6 +1,6 @@
 {
 	"riots":{
-		"name": "Emeutes !",
+		"name": "Bon ba, révolte ? REVOLTE !",
 		"text":	"Capitaine, la situation commence à devenir intenable dans les niveaux inférieurs. La population se tourne vers le canibalisme, et des émeutes éclatent un peu partout. J'en conçois, c'est amusant à voir, mais la cargaison risque d'être endommagée.",
 
 		"effects":[{
@@ -23,7 +23,7 @@
 			},
 			{
 				"name": "fuel",
-				"apply":"-15"
+				"apply":"-10"
 			}]
 		},
 
@@ -105,7 +105,7 @@
 		"appear" : [{
 			"gauge": {
 				"name": "population",
-				"apply": "-10"
+				"apply": "-5"
 			}
 		}]
 	},
@@ -312,7 +312,7 @@
 
 		"effects":[{
 				"gauge" : "population",
-				"apply" : "-10"
+				"apply" : "-7"
 		}
 		],
 
@@ -341,11 +341,11 @@
 
 		"effects":[{
 				"gauge" : "oxygen",
-				"apply" : "-10"
+				"apply" : "-5"
 		},
 		{
 				"gauge" : "population",
-				"apply" : "-10"
+				"apply" : "-5"
 		}
 		],
 
