@@ -5,6 +5,9 @@ var ui
 
 var current_day = 0
 
+func reset():
+	current_day = 0
+
 func _ready():
 	pass
 
@@ -30,12 +33,13 @@ func activate_popups(sector):
 		if popup.get_crisis().sector == sector:
 			popup.pop()
 
-func reset():
-	current_day = 0
-	ship.reset()
-	ui.reset()
+func activate_crisis_popup(crisis):
+	for popup in get_tree().get_nodes_in_group("crisis popup"):
+		if popup.get_crisis().id == crisis.id:
+			popup.pop()
 
-func translate(word):
+func translate(w):
+	var word = w.to_lower()
 	if word == "food":
 		return "nourriture"
 	if word == "fuel":

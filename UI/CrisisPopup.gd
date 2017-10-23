@@ -4,13 +4,16 @@ var _crisis = null setget set_crisis, get_crisis
 
 func _ready():
 	randomize()
-	set_pos(Vector2(rand_range(20, 40), rand_range(20,40)))
+	set_pos(get_pos() + Vector2(rand_range(-50, 50), rand_range(-30, 30)))
 	if _crisis != null:
 		init()
 
 func init():
-	set_title(_crisis.name.capitalize())
-	get_node("Text").set_bbcode(_crisis.text)
+	set_title(_crisis.name)
+	var txt = _crisis.text
+	if _crisis.has("follows"):
+		txt = str("(Suite de ", _crisis.follows.name, ")\n\n", txt)
+	get_node("Text").set_bbcode(txt)
 	get_node("Picture").set_texture(load(str("res://Sprites/", _crisis.name, ".png")))
 	
 	var effect_text = "Sans effet"
@@ -35,8 +38,6 @@ func init():
 	
 	if _crisis.has("is_consequence") and _crisis.is_consequence:
 		get_node("Procrastinate").set_text(["J'ai dit : PLUS TARD", "Mh mh...", "Je suis déjà assez occupé"][randi()%3])
-	
-	update()
 
 func update_ui():
 	if !Global.ship.has_resources_to_resolve(_crisis):
@@ -49,7 +50,6 @@ func update_ui():
 func set_crisis(crisis):
 	_crisis = crisis
 	init()
-	update_ui()
 
 func get_crisis():
 	return _crisis
@@ -65,5 +65,11 @@ func _on_Procrastinate_pressed():
 	hide()
 
 func pop():
+	for popup in get_parent().get_children():
+		popup.set_as_toplevel(false)
+	set_as_toplevel(true)
 	get_node("AnimationPlayer").play("Pop")
 	show()
+
+func _on_CrisisPopup_about_to_show():
+	update_ui()

@@ -18,6 +18,16 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( 1, 1 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect/pos")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 500, 250 ), Vector2( 200, 50 ) ]
+}
 
 [node name="CrisisPopup" type="WindowDialog"]
 
@@ -25,10 +35,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 222.0
-margin/top = 86.0
-margin/right = 822.0
-margin/bottom = 586.0
+margin/left = 200.0
+margin/top = 50.0
+margin/right = 800.0
+margin/bottom = 550.0
 popup/exclusive = false
 window/title = "Please, name me !"
 script/script = ExtResource( 1 )
@@ -132,6 +142,8 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
+
+[connection signal="about_to_show" from="." to="." method="_on_CrisisPopup_about_to_show"]
 
 [connection signal="pressed" from="Resolve" to="." method="_on_Resolve_pressed"]
 

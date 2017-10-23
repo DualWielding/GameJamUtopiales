@@ -1,6 +1,7 @@
 extends Control
 
 var crisis_popup_class = preload("res://UI/CrisisPopup.tscn")
+var indicative_text_class = preload("res://UI/IndicativeText.tscn")
 
 func _ready():
 	Global.ui = self
@@ -15,6 +16,14 @@ func pop_crisis(crisis):
 	cp.add_to_group("crisis popup")
 	cp.set_crisis(crisis)
 	get_node("CrisisPopups").add_child(cp)
+	cp.pop()
+
+func add_indicative_text(crisis):
+	var node_name = str(crisis.sector.get_name(), "IndicativeTexts")
+	var it = indicative_text_class.instance()
+	it.set_crisis(crisis)
+	get_node(node_name).add_child(it)
+	return it
 
 func hide_popups():
 	for popup in get_node("CrisisPopups").get_children():
