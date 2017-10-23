@@ -59,10 +59,14 @@ func start_crisis(crisis):
 	crisis.sector = self
 	on_crisis = true
 	get_node("Light2D").show()
-	Global.ship.start_crisis(crisis)
 	get_node("AnimationPlayer").play("Blink_light")
+	
+	crisis.indicative_text = Global.ui.add_indicative_text(crisis)
+	
+	Global.ship.start_crisis(crisis)
 
 func stop_crisis(crisis):
+	crisis.indicative_text.queue_free()
 	if Global.ship.get_sector_crisis_number(crisis.sector) == 0:
 		on_crisis = false
 		get_node("Light2D").hide()

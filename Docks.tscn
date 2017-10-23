@@ -15,7 +15,12 @@ script/script = ExtResource( 2 )
 
 [node name="Sprite" parent="."]
 
+visibility/light_mask = 513
 texture = ExtResource( 3 )
+
+[node name="Light2D" parent="."]
+
+range/item_mask = 512
 
 [node name="Area2D" type="Area2D" parent="."]
 

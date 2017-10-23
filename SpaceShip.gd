@@ -35,34 +35,13 @@ func _ready():
 	Global.ship = self
 	get_node("AnimationPlayer").play("Float")
 
-func reset():
-	current_crisis = []
-	sectors_to_activate = ["Slum"]
-	inactive_sectors = ["Nursery", "Estate", "Market", "CommandDeck", "Docks", "Engine"]
-	update_food(-food + 5)
-	update_security(-security + 5)
-	update_scrap(-scrap + 5)
-	update_population(-population + 50)
-	update_fuel(-fuel + 50)
-	update_oxygen(-oxygen + 50)
-	
-	for sector in get_tree().get_nodes_in_group("ship part"):
-		sector.reset()
-
 func end_day():
 	Global.ui.hide_popups()
 	
 	for crisis in current_crisis:
 		apply_crisis_effects(crisis)
 	
-	for crisis in current_crisis:
-		if crisis.has("consequences") and int(crisis.consequences[0].turn) == crisis.current_turn:
-			var cons = Consequences.get(crisis.consequences[0].name)
-			cons.sector = crisis.sector
-			start_crisis(cons)
-			stop_crisis(crisis)
-		elif crisis.has("end") and int(crisis.end.turn) == crisis.current_turn:
-			stop_crisis(crisis)
+	apply_consequences()
 
 func start_day(day_number):
 	for crisis in current_crisis:
@@ -72,7 +51,6 @@ func start_day(day_number):
 	update_security(1)
 	update_food(1)
 	update_scrap(1)
-	Global.ui.update_popups()
 	
 	for sector in sectors_to_activate:
 		get_node(sector).activate()
@@ -104,11 +82,37 @@ func apply_crisis_effects(crisis):
 			elif effect.has("ressource"):
 				update_resource(effect.ressource, int(effect.apply))
 
+func apply_consequences():
+	var crisis_to_start = []
+	var crisis_to_stop = []
+	for crisis in current_crisis:
+		if crisis.has("consequences") and int(crisis.consequences[0].turn) == crisis.current_turn:
+			var cons = Consequences.get(crisis.consequences[0].name)
+			cons.sector = crisis.sector
+			cons.follows = crisis
+			crisis_to_start.append(cons)
+			crisis_to_stop.append(crisis)
+		elif crisis.has("end") and int(crisis.end.turn) == crisis.current_turn:
+			var popup = AcceptDialog.new()
+			popup.connect("confirmed", popup, "queue_free")
+			var text = "Capitaine ! Les choses semblent être rentrées dans l'ordre toutes seules."
+			popup.set_text(text)
+			popup.set_title(str("Fin de ", crisis.name, "    "))
+			popup.set_pos(Vector2(100, 100))
+			Global.ui.add_child(popup)
+			popup.show()
+			crisis_to_stop.append(crisis)
+	
+	for crisis in crisis_to_stop:
+		stop_crisis(crisis)
+	for crisis in crisis_to_start:
+		crisis.sector.start_crisis(crisis)
+
 #	 Add
 func start_crisis(crisis):
 	# This crisis will be live !
 	var c = crisis
-	c["current_turn"] = 0
+	c.current_turn = 1
 	c.id = randi() % 100000000
 	current_crisis.append(c)
 	
@@ -125,7 +129,7 @@ func start_crisis(crisis):
 			update_resource(appear_effect.resource.name, int(appear_effect.resource.apply))
 		if appear_effect.has("sector"):
 			sectors_to_activate.append(appear_effect.sector)
-	
+			inactive_sectors.remove(inactive_sectors.find(appear_effect.sector))
 
 # 	Remove
 func stop_crisis(crisis):
@@ -162,7 +166,6 @@ func resolve_crisis(crisis):
 			Global.ui.add_child(popup)
 			popup.show()
 		stop_crisis(crisis)
-	
 	else:
 		print("Not enough resource to resolve the crisis : ", crisis.name)
 	Global.ui.update_popups()
