@@ -56,7 +56,6 @@ func get_crisis():
 
 func resolve():
 	Global.ship.resolve_crisis(_crisis)
-	queue_free()
 
 func _on_Resolve_pressed():
 	resolve()
@@ -65,11 +64,13 @@ func _on_Procrastinate_pressed():
 	hide()
 
 func pop():
-	for popup in get_parent().get_children():
-		popup.set_as_toplevel(false)
-	set_as_toplevel(true)
-	get_node("AnimationPlayer").play("Pop")
-	show()
+	if !is_visible():
+		for popup in get_parent().get_children():
+			popup.set_as_toplevel(false)
+		set_as_toplevel(true)
+		get_node("AnimationPlayer").play("Pop")
+		update_ui()
+		show()
 
 func _on_CrisisPopup_about_to_show():
 	update_ui()

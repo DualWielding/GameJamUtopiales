@@ -25,8 +25,7 @@ func next_day():
 		ship.start_day(current_day)
 
 func you_won():
-	print("You won")
-	get_tree().quit()
+	get_tree().change_scene("res://Menus/Control.tscn")
 
 func activate_popups(sector):
 	for popup in get_tree().get_nodes_in_group("crisis popup"):

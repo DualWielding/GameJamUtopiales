@@ -144,13 +144,14 @@ func has_resources_to_resolve(crisis):
 		for resolution_requirement in crisis.resolution:
 			if get(resolution_requirement.ressource) + int(resolution_requirement.apply) < 0:
 				return false
-		return true
+	return true
 
 func resolve_crisis(crisis):
 	if has_resources_to_resolve(crisis):
-		for resolution_requirement in crisis.resolution:
-			update_resource(resolution_requirement.ressource, int(resolution_requirement.apply))
-		
+		if crisis.has("resolution"):
+			for resolution_requirement in crisis.resolution:
+				update_resource(resolution_requirement.ressource, int(resolution_requirement.apply))
+			
 		if crisis.has("onResolve"):
 			var popup = AcceptDialog.new()
 			popup.connect("confirmed", popup, "queue_free")
