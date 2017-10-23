@@ -58,9 +58,11 @@ func resolve():
 	Global.ship.resolve_crisis(_crisis)
 
 func _on_Resolve_pressed():
+	Global.ui.get_node("SamplePlayer").play("solve_crisis")
 	resolve()
 
 func _on_Procrastinate_pressed():
+	Global.ui.get_node("SamplePlayer").play("see_later")
 	hide()
 
 func pop():

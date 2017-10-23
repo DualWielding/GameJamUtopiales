@@ -37,6 +37,7 @@ func update_popups():
 		popup.update_ui()
 
 func _on_NextDayButton_pressed():
+	get_node("SamplePlayer").play("next_turn")
 	Global.next_day()
 
 func next_day():
