@@ -94,17 +94,6 @@ shortcut = null
 text = "Prochain tour"
 flat = false
 
-[node name="CrisisPopups" type="Container" parent="."]
-
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 40.0
-margin/bottom = 40.0
-
 [node name="TextureProgress" type="TextureProgress" parent="."]
 
 focus/ignore_mouse = false
@@ -232,10 +221,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 753.0
-margin/top = 114.0
-margin/right = 797.0
-margin/bottom = 154.0
+margin/left = 726.0
+margin/top = 100.0
+margin/right = 770.0
+margin/bottom = 140.0
 alignment = 0
 
 [node name="CommandDeckIndicativeTexts" type="VBoxContainer" parent="."]
@@ -249,6 +238,17 @@ margin/top = 16.0
 margin/right = 650.0
 margin/bottom = 56.0
 alignment = 0
+
+[node name="CrisisPopups" type="Container" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
 
 [connection signal="pressed" from="NextDayButton" to="." method="_on_NextDayButton_pressed"]
 
