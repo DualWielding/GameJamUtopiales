@@ -1,6 +1,16 @@
 [gd_scene load_steps=2 format=1]
 
-[ext_resource path="res://UI/CrisisViewer.gd" type="Script" id=1]
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Panel
+
+var current_crisis = {}
+
+func add_crisis(crisis):
+	current_crisis[crisis.id] = crisis
+
+func _ready():
+	pass"
 
 [node name="CrisisViewer" type="Panel"]
 
@@ -12,7 +22,7 @@ margin/left = 0.0
 margin/top = 85.0
 margin/right = 113.0
 margin/bottom = 517.0
-script/script = ExtResource( 1 )
+script/script = SubResource( 1 )
 
 [node name="GeneralContainer" type="Container" parent="."]
 
