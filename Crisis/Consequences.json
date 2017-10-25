@@ -46,7 +46,7 @@
 		"name": "La loi, c'est nous !",
 		"text":	"C'est merveilleux ! Le chaos ambiant des niveaux inférieurs a inquiété le reste des passagers : le service d'ordre du vaisseau croule sous les candidatures !",
 		"end" : {
-			"turn" : "2",
+			"turn" : "3",
 			"text" : "end of the riots"
 
 		},
@@ -377,21 +377,19 @@
 		"onResolve" : {
 			"text": "Nos hommes se sont bien battus, et la situation est sous contrôle !\n La bonne nouvelle, c'est qu'il s'avère que les mutants ont un gout délicieux.\n La mauvaise, c'est que les combats ont endommagé de nombreux appareils...",
 			"gauge": [{
-				"name" : "oxygen",
-				"apply" : "-10"
-			
-			}],
-			"gauge": [{
-				"name" : "fuel",
-				"apply" : "-10"
-			
-			}],
-			"gauge": [{
 				"name" : "population",
 				"apply" : "10"
-			
+			},
+			{
+				"name": "fuel",
+				"apply":"-10"
+			},
+			{
+				"name":"oxygen",
+				"apply":"-10"
 			}]
 		},
+
 
 		"consequences" : [{
 			"turn" : "2",
@@ -414,29 +412,35 @@
 
 		"resolution" : [{
 				"ressource" : "security",
-				"apply" : "15"
+				"apply" : "10"
 		}
 		],
 
 		"onResolve" : {
 			"text": "Nos hommes se sont bien battus, et la situation est sous contrôle !\n La bonne nouvelle, c'est qu'il s'avère que les mutants ont un gout délicieux.\n La mauvaise, c'est que les combats ont endommagé de nombreux appareils...",
 			"gauge": [{
-				"name" : "oxygen",
-				"apply" : "-10"
-			
-			}],
-			"gauge": [{
-				"name" : "fuel",
-				"apply" : "-10"
-			
-			}],
-			"gauge": [{
 				"name" : "population",
 				"apply" : "10"
-			
+			},
+			{
+				"name": "fuel",
+				"apply":"-10"
+			},
+			{
+				"name":"oxygen",
+				"apply":"-10"
 			}]
 		},
 
+
+		"consequences" : [{
+			"turn" : "2",
+			"name" : "enought"
+
+		}
+		]
+
+	},
 		"consequences" : [{
 			"turn" : "3",
 			"name" : "grown fast"
