@@ -37,16 +37,7 @@
 			"turn" : "1",
 			"name" : "we are the law"
 
-		}
-		],
-
-		"appear" : [{
-			"gauge": {
-				"name": "population",
-				"apply": "-2"
-			}
-		}
-		]
+		}]
 
 	},
 
@@ -127,12 +118,12 @@
 		"appear" : [
 			{"gauge": {
 				"name": "population",
-				"apply": "5"
+				"apply": "30"
 			}},
                    
 			{"gauge": {
 				"name": "oxygen",
-				"apply": "-20"
+				"apply": "-10"
 			}}
 		]
 
