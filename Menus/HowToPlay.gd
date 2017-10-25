@@ -5,7 +5,6 @@ onready var sound = get_node("SamplePlayer")
 func _ready():
 	get_node("Popup1").show()
 
-
 func _on_Popup1_confirmed():
 	sound.play("ok")
 	get_node("Popup1").hide()
