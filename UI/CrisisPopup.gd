@@ -71,7 +71,6 @@ func pop():
 			popup.set_as_toplevel(false)
 		set_as_toplevel(true)
 		get_node("AnimationPlayer").play("Pop")
-		update_ui()
 		show()
 
 func _on_CrisisPopup_about_to_show():
