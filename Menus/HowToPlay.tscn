@@ -46,7 +46,6 @@ stretch_mode = 0
 
 [node name="Popup1" type="AcceptDialog" parent="."]
 
-editor/display_folded = true
 visibility/visible = false
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -71,7 +70,7 @@ margin/top = 10.0
 margin/right = 731.0
 margin/bottom = 323.0
 bbcode/enabled = true
-bbcode/bbcode = "[b]Despair[/b] est un jeu de gestion de crise au [b]tour par tour[/b] dans lequel vous incarnez un capitaine en charge d'amener un vaisseau (ou ce qu'il en restera à sa destination.
+bbcode/bbcode = "[b]Despair[/b] est un jeu de gestion de crise au [b]tour par tour[/b] dans lequel vous incarnez un capitaine en charge d'amener un vaisseau (ou ce qu'il en restera) à sa destination.
 
 Pour cela, vous devrez prendre les bonnes décisions pour régler les crises ou laisser vos passagers les régler tout seul.
 Le jeu s'arrête lorsque l'[b]une[/b] de vos ressources vitales atteint 0.
@@ -82,7 +81,6 @@ percent_visible = 1.0
 
 [node name="Popup2" type="AcceptDialog" parent="."]
 
-editor/display_folded = true
 visibility/visible = false
 focus/ignore_mouse = false
 focus/stop_mouse = true
