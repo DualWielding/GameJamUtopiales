@@ -34,7 +34,7 @@
 		},
 
 		"consequences" : [{
-			"turn" : "1",
+			"turn" : "2",
 			"name" : "we are the law"
 
 		}]
@@ -46,7 +46,7 @@
 		"name": "La loi, c'est nous !",
 		"text":	"C'est merveilleux ! Le chaos ambiant des niveaux inférieurs a inquiété le reste des passagers : le service d'ordre du vaisseau croule sous les candidatures !",
 		"end" : {
-			"turn" : "1",
+			"turn" : "2",
 			"text" : "end of the riots"
 
 		},
@@ -111,7 +111,7 @@
 		"text":	"Hum... Capitaine, la fuite de gaz n'étant toujours pas réparée... il est monté à la tête des habitants des niveaux inférieurs qui... enfin... disons que la natalité va augmenter en conséquence prochainement. Les images jointes ont été naturellement censurées.",
 
 		"end":{
-				"turn" : "1",
+				"turn" : "2",
 				"text" : "Le calme semble enfin être revenu dans les niveaux supérieurs. Nos senseurs indiquent une augmentation de 865% du taux de natalité."
 		},
 
@@ -225,7 +225,7 @@
 		},
 
 		"consequences" : [{
-			"turn" : "1",
+			"turn" : "2",
 			"name" : "avae novae"
 
 		}]
@@ -259,7 +259,7 @@
 		},
 
 		"consequences" : [{
-			"turn" : "1",
+			"turn" : "2",
 			"name" : "novae ultima"
 		}],
 
@@ -394,7 +394,7 @@
 		},
 
 		"consequences" : [{
-			"turn" : "1",
+			"turn" : "2",
 			"name" : "enought"
 
 		}

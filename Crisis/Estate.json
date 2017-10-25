@@ -18,7 +18,7 @@
 		}],
 
 		"onResolve" : {
-			"text": "La population est très mécontente de votre décision de réparer la fuite ! Un peu partout, de petits groupes ont tenté de se procurer le précieux gaz en éventrant des canalisations. Notre réserve d'oxygène en a souffert !",
+			"text": "La population est très mécontente de votre décision de réparer la fuite !\nUn peu partout, de petits groupes ont tenté de se procurer le précieux gaz en éventrant des canalisations.\nNotre réserve d'oxygène en a souffert !",
 			"gauge": [{
 				"name" : "oxygen",
 				"apply" : "-10"

@@ -13,7 +13,7 @@
 		}],
 
 		"onResolve" : {
-			"text": "Oups ! La créature n'était en fait qu'un campement de passagers clandestins. Nos gardes\nayant sans doute vu trop de films d'horreur se passant dans l'espace, ont paniqué et tiré dans le tas...\nLa populace outrée s'est empressée de les lyncher et de tout casser dans le secteur !",
+			"text": "Oups ! La créature n'était en fait qu'un campement de passagers clandestins. Nos gardes\nayant sans doute vu trop de films d'horreur se passant dans l'espace, ils ont paniqué et tiré dans le tas...\nLa populace outrée s'est empressée de les lyncher et de tout casser dans le secteur !",
 			"gauge": [{
 				"name" : "fuel",
 				"apply" : "-20"
@@ -21,7 +21,7 @@
 		},
 
 		"consequences" : [{
-			"turn" : "1",
+			"turn" : "2",
 			"name" : "stowaway"
 
 		}
