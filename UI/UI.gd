@@ -43,3 +43,8 @@ func _on_NextDayButton_pressed():
 func next_day():
 	var ball = get_node("TurnCounter/TextureFrame")
 	ball.set_pos(Vector2(Global.current_day * (ball.get_parent().get_size().x/12), ball.get_pos().y))
+	if Global.current_day == 11:
+		update_next_day_button()
+
+func update_next_day_button():
+	get_node("NextDayButton").set_text("Atterrir !")
