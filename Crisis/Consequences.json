@@ -44,9 +44,9 @@
 
 	"we are the law":{
 		"name": "La loi, c'est nous !",
-		"text":	"C'est merveilleux ! Le chaos ambiant des niveaux inférieurs a inquiété le reste des passagers : le service d'ordre du vaisseau croule sous les candidatures !",
+		"text":	"C'est merveilleux ! Le chaos ambiant des niveaux inférieurs a inquiété le reste des passagers : ils prennent d'eux mêmes les armes pour se retourner les uns contre les autres ! Ils pillent nos réserves de carburant pour s'entretuer, mais après tout, c'est peu cher à payer pour avoir la paix, non ?",
 		"end" : {
-			"turn" : "3",
+			"turn" : "4",
 			"text" : "end of the riots"
 
 		},
@@ -55,12 +55,7 @@
 				"ressource" : "security",
 				"apply" : "-5"
 		}
-		],
-
-			"ressource" :[{
-				"name": "security",
-				"apply": "5"
-			}]
+		]
 
 	},
 
@@ -92,7 +87,7 @@
 		},
 
 		"consequences" : [{
-			"turn" : "2",
+			"turn" : "3",
 			"name" :"orgy"
 
 		}],
@@ -100,7 +95,7 @@
 		"appear" : [{
 			"gauge": {
 				"name": "population",
-				"apply": "-5"
+				"apply": "-20"
 			}
 		}]
 	},
@@ -111,14 +106,24 @@
 		"text":	"Hum... Capitaine, la fuite de gaz n'étant toujours pas réparée... il est monté à la tête des habitants des niveaux inférieurs qui... enfin... disons que la natalité va augmenter en conséquence prochainement. Les images jointes ont été naturellement censurées.",
 
 		"end":{
-				"turn" : "2",
+				"turn" : "3",
 				"text" : "Le calme semble enfin être revenu dans les niveaux supérieurs. Nos senseurs indiquent une augmentation de 865% du taux de natalité."
 		},
+
+		"effects":[{
+				"gauge" : "population",
+				"apply" :"5"
+		},
+
+		{
+				"gauge" : "oxygen",
+				"apply" : "-5"
+		}],
 
 		"appear" : [
 			{"gauge": {
 				"name": "population",
-				"apply": "30"
+				"apply": "20"
 			}},
                    
 			{"gauge": {
@@ -152,7 +157,7 @@
 			"text": "Ourah ! Le monstre xénos est mort, capitaine ! La seule survivante de l'équipe\nd'intervention raconte que même son sang était corrosif. Quelle effroyable créature !\n Oh, d'ailleurs le sang s'est répandu dans les conduites d'eau potable et provoqué la mort de milliers d'innocents.\n Mais des innocents majoritairement pauvres et inutiles, je vous rassure !",
 			"gauge": [{
 				"name" : "population",
-				"apply" : "-20"
+				"apply" : "-30"
 			}]
 		},
 
@@ -181,7 +186,7 @@
 		},
 		{
 				"gauge": "fuel",
-				"apply": "-10"
+				"apply": "-12"
 		}],
 
 		"resolution" : [{
@@ -197,7 +202,7 @@
 			"text": "Ourah ! Le monstre xénos est mort, capitaine ! La seule survivante de l'équipe\nd'intervention raconte que même son sang était corrosif. Quelle effroyable créature !\nOh, d'ailleurs le sang s'est répandu dans les conduites d'eau potable et provoqué la mort de milliers d'innocents.\nQuoique après réflexion, ils devaient sûrement avoir des choses à se repprocher pour mériter un tel sort.",
 			"gauge": [{
 				"name" : "population",
-				"apply" : "-20"
+				"apply" : "-30"
 			}]
 		}
 	},
@@ -251,7 +256,7 @@
 		}],
 
 		"onResolve" : {
-			"text": "Les travailleurs membres des Saints Admirateurs Unifiés de la Glorieuse Novae sont outrés de votre décision !\n Ils ont saboté les appareils nous procurant de l'oxygène et posé un préavis de grève.\n Je vous avais pourtant bien dit de ne pas prendre d'ouvriers français !",
+			"text": "Les travailleurs membres des Saints Admirateurs Unifiés de la Glorieuse Novae sont outrés de votre décision !\n Ils ont saboté les appareils nous procurant de l'oxygène et posé un préavis de grève.",
 			"gauge": [{
 				"name" : "oxygen",
 				"apply" : "-10"
@@ -292,7 +297,7 @@
 		}],
 
 		"onResolve" : {
-			"text": "Les travailleurs membres des Saints Admirateurs Unifiés de la Glorieuse Novae sont outrés de votre décision !\nIls ont saboté les appareils nous procurant de l'oxygène et posé un préavis de grève.\nJe vous avais pourtant bien dit de ne pas prendre d'ouvriers français !",
+			"text": "Les travailleurs membres des Saints Admirateurs Unifiés de la Glorieuse Novae sont outrés de votre décision !\nIls ont saboté les appareils nous procurant de l'oxygène et posé un préavis de grève.",
 			"gauge": [{
 				"name" : "oxygen",
 				"apply" : "-10"
@@ -392,7 +397,7 @@
 
 
 		"consequences" : [{
-			"turn" : "2",
+			"turn" : "3",
 			"name" : "enought"
 
 		}
@@ -402,17 +407,21 @@
 
 	"enought":{
 		"name": "Ca suffit maintenant !",
-		"text":	"Ce virus a fait de ces enfants des mutants d'une force incroyable ! Le personnel a bien tenté de les neutraliser en les privant de dessert, mais il s'en est suivi un caprice aux proportions dantesques ! Il faut envoyer l'armée, ou leur supprimer l'oxygène pendant un mois ou deux, histoire de calmer tout le monde.",
+		"text":	"Ce virus a fait de ces enfants des mutants d'une force incroyable ! Le personnel a bien tenté de les neutraliser en les privant de dessert, mais il s'en est suivi un caprice aux proportions dantesques ! Il faut envoyer l'armée ! En attendant, coupons leur l'oxygen durant une semaine ou deux, histoire de calmer tout le monde.",
 
 		"effects":[{
 				"gauge" : "population",
-				"apply" : "-10"
+				"apply" : "-5"
+		},
+		{
+			"gauge": "oxygen",
+			"apply": "-5"
 		}
 		],
 
 		"resolution" : [{
 				"ressource" : "security",
-				"apply" : "10"
+				"apply" : "-10"
 		}
 		],
 
@@ -432,17 +441,8 @@
 			}]
 		},
 
-
 		"consequences" : [{
-			"turn" : "2",
-			"name" : "enought"
-
-		}
-		]
-
-	},
-		"consequences" : [{
-			"turn" : "3",
+			"turn" : "4",
 			"name" : "grown fast"
 
 		}
@@ -455,7 +455,7 @@
 		"text":	"Monsieur, il semblerait que votre politique éducative stricte et accessoirement la privation d'air respirable ait eu un effet bénéfique sur les mutants qui sont revenus à la raison. Reconnaissants, ils font maintenant d'excellents travailleurs  pour le vaisseau !",
 		
 		"end" : {
-			"turn": "1",
+			"turn": "2",
 			"text": "Malheureusement, il semblerait que certaines lois existent concernant le travail des enfants... Nous devrons nous passer de leurs services ! .. Du moins officiellement."
 		}
 
