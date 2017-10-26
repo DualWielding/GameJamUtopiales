@@ -112,13 +112,31 @@
 
 		"effects":[{
 				"gauge" : "population",
-				"apply" :"5"
+				"apply" :"3"
 		},
 
 		{
 				"gauge" : "oxygen",
 				"apply" : "-5"
 		}],
+
+		"resolution" : [{
+				"ressource" : "security",
+				"apply" : "-7"
+		}],
+
+		"onResolve" : {
+			"text": "La population est très mécontente de votre décision de réparer la fuite !\nUn peu partout, de petits groupes ont tenté de se procurer le précieux gaz en éventrant des canalisations.\n Cela a provoqué de nombreux accident et notre réserve d'oxygène en a souffert !",
+			"gauge": [{
+				"name" : "oxygen",
+				"apply" : "-15"
+			},
+			{
+				"name": "population",
+				"apply": "-5"
+			}
+			]
+		},
 
 		"appear" : [
 			{"gauge": {
