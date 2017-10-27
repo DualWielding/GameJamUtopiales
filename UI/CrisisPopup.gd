@@ -14,7 +14,13 @@ func init():
 	if _crisis.has("follows"):
 		txt = str("(Suite de ", _crisis.follows.name, ")\n\n", txt)
 	get_node("Text").set_bbcode(txt)
-	get_node("Picture").set_texture(load(str("res://Sprites/", _crisis.sector.get_name(), "_crisis.png")))
+	
+	var file2Check = File.new()
+	var path = str("res:////Sprites/", _crisis.name, "_crisis.png")
+	if file2Check.file_exists(path):
+		get_node("Picture").set_texture(load(path))
+	else:
+		get_node("Picture").set_texture(load(str("res://Sprites/", _crisis.sector.get_name(), "_crisis.png")))
 	
 	var effect_text = "Sans effet"
 	if _crisis.has("effects"):
