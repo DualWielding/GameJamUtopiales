@@ -78,6 +78,22 @@ shortcut = null
 text = "Crédits"
 flat = false
 
+[node name="Button" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 810.0
+margin/top = 570.0
+margin/right = 868.0
+margin/bottom = 590.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Quitter"
+flat = false
+
 [node name="Credits" type="RichTextLabel" parent="."]
 
 visibility/visible = false
@@ -112,5 +128,7 @@ stream/buffering_ms = 500
 [connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
 
 [connection signal="pressed" from="CreditsButton" to="." method="_on_CreditsButton_pressed"]
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 
 

@@ -5,6 +5,7 @@ var times
 func _ready():
 	times = 0
 	get_node("StreamPlayer").connect("finished", self, "next")
+	get_node("FirstTurnPopup").show()
 
 func next():
 	times += 1

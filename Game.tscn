@@ -44,4 +44,22 @@ stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
 
+[node name="FirstTurnPopup" type="AcceptDialog" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 222.0
+margin/top = 123.0
+margin/right = 821.0
+margin/bottom = 249.0
+popup/exclusive = false
+window/title = "Premier tour"
+dialog/text = "Ceci est votre premier jour, Capitaine. Et jusqu'ici, tout va bien.
+Comme aucune crise n'est déclenchée, vous n'avez rien d'autre à faire qu'explorer votre vaisseau.
+
+Quand vous serez prêt.e, cliquez sur le bouton \"Prochain tour\" pour faire avancer la partie."
+dialog/hide_on_ok = true
+
 
