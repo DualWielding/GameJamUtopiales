@@ -1,4 +1,4 @@
-{
+﻿{
 	"riots":{
 		"name": "Revolte ? REVOLTE !",
 		"text":	"Capitaine, la situation commence à devenir intenable dans les niveaux inférieurs. La population se tourne vers le canibalisme, et des émeutes éclatent un peu partout. J'en conçois, c'est amusant, cela dit la cargaison de fuel risque d'être endommagée.",
@@ -257,7 +257,7 @@
 
 	"avae novae":{
 		"name": "Avae Novae",
-		"text":	"Capitaine, nous avons... Je veux dire : les membres de la secte Novae ont volé un container de nourriture pour de le 'rendre à l'espace', afin de calmer le courroux cosmique des saintes Etoiles !",
+		"text":	"Capitaine, nous avons... Je veux dire : les membres de la secte Novae ont volé un container de nourriture pour le 'rendre à l'espace', afin de calmer le courroux cosmique des saintes Etoiles !",
 
 		"effects":[{
 				"gauge" : "fuel",

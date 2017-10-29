@@ -9,7 +9,7 @@ func _ready():
 
 func next():
 	times += 1
-	if times == 2: #Second soundtrack is on loop
+	if times == 7: #Second soundtrack is on loop
 		get_node("StreamPlayer 2").play()
 	else:
 		get_node("StreamPlayer").play()
