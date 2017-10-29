@@ -425,7 +425,7 @@
 
 	"enought":{
 		"name": "Ca suffit maintenant !",
-		"text":	"Ce virus a fait de ces enfants des mutants d'une force incroyable ! Le personnel a bien tenté de les neutraliser en les privant de dessert, mais il s'en est suivi un caprice aux proportions dantesques ! Il faut envoyer l'armée ! En attendant, coupons leur l'oxygen durant une semaine ou deux, histoire de calmer tout le monde.",
+		"text":	"Ce virus a fait de ces enfants des mutants d'une force incroyable ! Le personnel a bien tenté de les neutraliser en les privant de dessert, mais il s'en est suivi un caprice aux proportions dantesques ! Il faut envoyer l'armée ! En attendant, coupons leur l'oxygène durant une semaine ou deux, histoire de calmer tout le monde.",
 
 		"effects":[{
 				"gauge" : "population",

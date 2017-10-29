@@ -1,7 +1,7 @@
 {
 	"-1":{
 		"name": "Surchauffe",
-		"text":	"Capitaine, nos ingénieurs nous informent que les réacteurs sont défaillants et consomment bien plus de fuel qu'ils ne le devraient ! Ils préconisent d'utiliser nos surplus de nourriture afin d'économiser le carburant en attendant de pouvoir les réparer.",
+		"text":	"Capitaine, nos ingénieurs nous informent que les réacteurs sont défaillants et consomment notre oxigène en grande quantité ! Ils préconisent d'utiliser nos surplus de nourriture afin d'économiser le carburant en attendant de pouvoir les réparer.",
 
 		"effects":[{
 				"gauge" : "fuel",
