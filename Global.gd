@@ -5,6 +5,16 @@ var ui
 
 var current_day = 0
 
+var pictures = {
+	"Famine !": load("res://Sprites/Famine !_crisis.png"),
+	"Docks": load("res://Sprites/docks_crisis.png"),
+	"Engine": load("res://Sprites/engine_crisis.png"),
+	"Estate": load("res://Sprites/estate_crisis.png"),
+	"Market": load("res://Sprites/market_crisis.png"),
+	"Nursery": load("res://Sprites/nursery_crisis.png"),
+	"Slum": load("res://Sprites/slum_crisis.png")
+}
+
 func reset():
 	current_day = 0
 
