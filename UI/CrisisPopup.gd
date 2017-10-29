@@ -14,11 +14,15 @@ func init():
 	if _crisis.has("follows"):
 		txt = str("(Suite de ", _crisis.follows.name, ")\n\n", txt)
 	get_node("Text").set_bbcode(txt)
-	get_node("Picture").set_texture(load(str("res://Sprites/", _crisis.sector.get_name(), "_crisis.png")))
 	
-	var effect_text = "Sans effet"
+	if Global.pictures.has(_crisis.name):
+		get_node("Picture").set_texture(Global.pictures[_crisis.name])
+	else:
+		if Global.pictures.has(_crisis.sector.get_name()):
+			get_node("Picture").set_texture(Global.pictures[_crisis.sector.get_name()])
+	
+	var effect_text = "[b]Effets[/b] :\n"
 	if _crisis.has("effects"):
-		effect_text = "[b]Effets[/b] :\n"
 		for effect in _crisis.effects:
 			var thing_to_decrease
 			if effect.has("gauge"):
@@ -29,9 +33,8 @@ func init():
 	
 	get_node("Effects").set_bbcode(effect_text)
 	
-	var cost_text = "Aucun coût"
+	var cost_text = "[b]Coûts de résolution[/b] :\n"
 	if _crisis.has("resolution"):
-		cost_text = "[b]Coûts de résolution[/b] :\n"
 		for cost in _crisis.resolution:
 			cost_text = str(cost_text, "    ", cost.apply, " ", Global.translate(cost.ressource), "\n")
 	get_node("ResolutionCosts").set_bbcode(cost_text)

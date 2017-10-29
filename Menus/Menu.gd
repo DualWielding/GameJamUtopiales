@@ -5,3 +5,7 @@ func _on_CreditsButton_pressed():
 
 func _on_Play_pressed():
 	get_tree().change_scene("res://Menus/HowToPlay.tscn")
+
+
+func _on_Button_pressed():
+	get_tree().quit()
